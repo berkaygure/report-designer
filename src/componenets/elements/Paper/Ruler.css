@@ -1,0 +1,96 @@
+.ruler {
+    position: absolute;
+    font-family: 'ubuntu mono', monospace, serif;
+    font-size: 9px;
+    line-height: 8px;
+    z-index: 10;
+}
+
+
+.ruler.horizontal {
+    height: 15px;
+    padding-top: 1px;
+    z-index: 8;
+    top: -15px;
+}
+
+.ruler.vertical {
+    width: 15px;
+    padding-top: 1px;
+    z-index: 8;
+    top: 0;
+    margin-left: -20px;
+}
+
+
+
+
+
+.rulerHTick {
+    position: absolute;
+    float: left;
+    border-left: 1px solid #b9b7b5;
+    width: 33.33px;
+    height: 15px;
+}
+
+.rulerHNumber {
+    position: absolute;
+    top: 0;
+    left: 2px;
+}
+
+.rulerHNumber:before {
+    display: table;
+    content: '';
+}
+
+.rulerHNumber:after {
+    clear: both;
+}
+
+.rulerFollwerH {
+    position: absolute;
+    width: 1px;
+    height: 15px;
+    left: 0;
+    top: 0;
+    background-color: rgba(51, 103, 153, 0.45);
+    border-right: 1px solid #336699;
+    border-left: 1px solid #336699;
+    z-index: 1;
+}
+.rulerFollwerV {
+    position: absolute;
+    width: 15px;
+    height: 1px;
+    left: 0;
+    top: 0;
+    background-color: rgba(51, 103, 153, 0.45);
+    border-top: 1px solid #336699;
+    border-bottom: 1px solid #336699;
+    z-index: 1;
+}
+
+.rulerVTick {
+    position: absolute;
+    border-top: 1px solid #b9b7b5;
+    width: 15px;
+    padding-left: 3px;
+    height: 33.33px;
+}
+
+.rulerVNumber {
+    position: absolute;
+    top: 2px;
+    left: 0;
+}
+
+.rulerVNumber:before {
+    display: table;
+    content: '';
+}
+
+.rulerVNumber:after {
+    clear: both;
+}

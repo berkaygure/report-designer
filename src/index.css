@@ -1,0 +1,20 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: whitesmoke;
+  padding-top: 4.5rem;
+}
+
+.table-column-element {
+  margin: 5px;
+  padding: 10px;
+  cursor: move;
+  background-color: whitesmoke;
+  text-align: left;
+}
+.table-column-element.disabled {
+  background-color: #ddd;
+}
+.table-column-element:hover {
+  background-color: #fff;
+}

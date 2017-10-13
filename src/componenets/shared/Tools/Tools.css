@@ -1,0 +1,24 @@
+/*
+ * Sidebar
+ */
+.sidebar {
+  position: fixed;
+  top: 59px;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  padding: 20px 10px;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+  border-right: 1px solid #eee;
+  background-color: #eee;
+}
+
+.accordion .card-header:after {
+  font-family: 'FontAwesome';
+  content: "\f068";
+  float: right;
+}
+.accordion .card-header.collapsed:after {
+  /* symbol for "collapsed" panels */
+  content: "\f067";
+}

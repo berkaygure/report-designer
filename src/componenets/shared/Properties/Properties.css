@@ -1,0 +1,16 @@
+
+.properties {
+    position: fixed;
+    top: 59px;
+    bottom: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 20px 10px;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    border-right: 1px solid #eee;
+    background-color: #eee;
+
+
+}
+
