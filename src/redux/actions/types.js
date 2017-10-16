@@ -11,4 +11,5 @@ export const INIT_APP = 'init_app';
 export const CHANGE_BG = 'change_bg';
 export const PREVIEW = 'preview';
 export const SAVE = 'save';
+export const NEW_MODAL = 'new_modal';
 

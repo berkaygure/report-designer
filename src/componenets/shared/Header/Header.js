@@ -53,9 +53,11 @@ class Header  extends  Component {
             <ul className="navbar-nav mr-auto">
               <li className="nav-item">
                 <a  className="nav-link">
-                  {this.props.save ? this.state.loading ?
-                    <span><i className='fa fa-circle-o-notch fa-spin'/> {this.state.text}</span> :
-                    <span> <i className='fa fa-check'/>&nbsp; {this.state.text}</span>: null}
+                  {(this.props.app !== null) ?
+                    this.props.save ? this.state.loading ?
+                      <span><i className='fa fa-circle-o-notch fa-spin'/> {this.state.text}</span> :
+                      <span> <i className='fa fa-check'/>&nbsp; {this.state.text}</span> : null
+                  : null}
                 </a>
               </li>
             </ul>

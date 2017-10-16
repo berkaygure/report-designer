@@ -4,7 +4,7 @@ import axios from 'axios';
 import Modal from "../shared/Modal";
 import {INIT,CREATE} from '../../api';
 import AlertBox from "../shared/AlertBox";
-import { initApp } from '../../redux/actions';
+import { initApp, newModal } from '../../redux/actions';
 
 const windowConfig = {
   title: 'Yeni Şablon Oluştur',
@@ -93,7 +93,7 @@ class CreateModal extends Component {
 
   render() {
     return (
-      <Modal title={windowConfig.title} id={'createNewModal'} open={this.props.open}
+      <Modal title={windowConfig.title} onClose={ () => { this.props.newModal(false) }} id={'createNewModal'} open={this.props.open}
              footer={<button onClick={this.createAction} type="button"
                              disabled={this.state.loading || !this.state.valid}
                              className="btn btn-primary"> {this.state.loading ?
@@ -185,4 +185,4 @@ const mapStateToProps = state => {
 
   };
 };
-export default connect(mapStateToProps, { initApp })(CreateModal);
+export default connect(mapStateToProps, { initApp,newModal })(CreateModal);

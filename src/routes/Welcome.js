@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Main from "../componenets/shared/Main/Main";
+import {initApp, newModal} from "../redux/actions/index";
 import Header from '../componenets/shared/Header/Header';
 import Logo from '../netesnaf.svg';
 import CreateModal from "../componenets/modals/CreateModal";
+import Footer from "../componenets/shared/Footer/Footer";
 
 
-export default class Welcome extends Component {
+class Welcome extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      show:false
-    }
+
   }
 
   render() {
@@ -20,7 +21,7 @@ export default class Welcome extends Component {
         <Header  history={this.props.history}/>
         <div className="container">
 
-          <CreateModal history={this.props.history} open={this.state.show}/>
+          <CreateModal history={this.props.history} open={this.props.app.newModal}/>
           <Main>
             <div className="jumbotron">
               <div className="row">
@@ -30,7 +31,7 @@ export default class Welcome extends Component {
                     Netesnaf şablon tasarımcına hoşgeldiniz.
                   </p>
                   <p>
-                    <button onClick={() => this.setState({ show : true})} className="btn btn-success" role="button">Şimdi Şablon Oluşturun</button>
+                    <button onClick={() => this.props.newModal(true)} className="btn btn-success" role="button">Şimdi Şablon Oluşturun</button>
                   </p>
                 </div>
                 <div className="col-md-6 text-center">
@@ -41,9 +42,17 @@ export default class Welcome extends Component {
             </div>
           </Main>
         </div>
+        <Footer/>
       </div>
 
     )
   }
 
 }
+const mapStateToProps = state => {
+  return {
+    app: state.application,
+
+  }
+};
+export default connect(mapStateToProps,{initApp, newModal})(Welcome);

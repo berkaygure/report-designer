@@ -1,12 +1,13 @@
 import {
-  ADD_ITEM, CHANGE_COLUMN, CREATE_PAGE, INIT_APP, PREVIEW, RE_POSITION, REMOVE_ITEM, SAVE, SET_PROPERTY,
+  ADD_ITEM, CHANGE_COLUMN, CREATE_PAGE, INIT_APP, NEW_MODAL, PREVIEW, RE_POSITION, REMOVE_ITEM, SAVE, SET_PROPERTY,
   UPDATE_COLUMN_ORDER
 } from "../actions/types";
 
 const INITIAL_STATE = {
   app: null,
   previewModal : false,
-  save: true
+  save: true,
+  newModal: false,
 };
 
 export default (state = INITIAL_STATE, action) => {
@@ -19,6 +20,11 @@ export default (state = INITIAL_STATE, action) => {
       return {
         ...state,
         previewModal: action.payload
+      };
+    case NEW_MODAL:
+      return {
+        ...state,
+        newModal: action.payload
       };
     case ADD_ITEM:
     case RE_POSITION:

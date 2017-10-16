@@ -7,7 +7,7 @@ import {
   CHANGE_COLUMN,
   UPDATE_COLUMN_ORDER,
   SET_PROPERTY,
-  INIT_APP, CHANGE_BG, PREVIEW, SAVE
+  INIT_APP, CHANGE_BG, PREVIEW, SAVE, NEW_MODAL
 } from './types';
 
 export const activeElements = id => {
@@ -84,6 +84,14 @@ export const previewModal = status => {
     payload: status
   }
 };
+
+export const newModal = status => {
+  return {
+    type: NEW_MODAL,
+    payload: status
+  }
+};
+
 
 export const saveState = save => {
   return {
