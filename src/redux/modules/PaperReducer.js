@@ -4,6 +4,7 @@ const INITIAL_STATE = {
   w: 0,
   h: 0,
   orientation: "v",
+  paper_template : 'a4', //a4 a5 gibi
   tmpBg: '#fff'
 };
 export default (state = INITIAL_STATE, action) => {
@@ -14,6 +15,7 @@ export default (state = INITIAL_STATE, action) => {
        ...action.payload.app.pageConfig.size,
        orientation: action.payload.app.pageConfig.orientation,
        count: action.payload.app.pageConfig.pageCount,
+       paper_template: action.payload.app.pageConfig.page,
      };
      case CHANGE_BG:
       return {

@@ -61,8 +61,10 @@ class PreviewModal extends Component {
   preview(){
     const post = {
       data: this.state,
-      layout: this.props.elements
+      layout: this.props.elements,
+      paper : this.props.paper
     };
+    console.log(post);
     const that = this;
     this.setState({
       loading:true
@@ -184,6 +186,7 @@ const mapStateToProps = state => {
   return {
     elements: state.elements.elements,
     tableDropped: state.elements.tableDropped,
+    paper: state.paper,
     tableColumns: state.elements.elements.find(x => x.element_type === 'table'),
   };
 };

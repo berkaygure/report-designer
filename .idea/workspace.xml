@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a009641b-2dd3-4295-a7bc-f5fddac3b9f6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/componenets/elements/Elements/Table/Table.js" afterPath="$PROJECT_DIR$/src/componenets/elements/Elements/Table/Table.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/componenets/elements/Paper/Paper.js" afterPath="$PROJECT_DIR$/src/componenets/elements/Paper/Paper.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/componenets/shared/Header/Header.js" afterPath="$PROJECT_DIR$/src/componenets/shared/Header/Header.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/redux/actions/index.js" afterPath="$PROJECT_DIR$/src/redux/actions/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/redux/actions/types.js" afterPath="$PROJECT_DIR$/src/redux/actions/types.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/redux/modules/ElementsReducer.js" afterPath="$PROJECT_DIR$/src/redux/modules/ElementsReducer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/componenets/modals/PreviewModal.js" afterPath="$PROJECT_DIR$/src/componenets/modals/PreviewModal.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/redux/modules/PaperReducer.js" afterPath="$PROJECT_DIR$/src/redux/modules/PaperReducer.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -33,36 +28,52 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Element.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/componenets/elements/Elements/Element.js">
+      <file leaf-file-name="PreviewModal.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/componenets/modals/PreviewModal.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2047">
-              <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
+            <state relative-caret-position="599">
+              <caret line="66" column="22" lean-forward="false" selection-start-line="66" selection-start-column="22" selection-end-line="66" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Location.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/componenets/elements/Properties/Location.js">
+      <file leaf-file-name="PaperReducer.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/redux/modules/PaperReducer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="26" column="40" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="351">
+              <caret line="13" column="16" lean-forward="true" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Paper.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/componenets/elements/Paper/Paper.js">
+      <file leaf-file-name="Application.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/routes/Application.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="121" column="30" lean-forward="true" selection-start-line="121" selection-start-column="30" selection-end-line="121" selection-end-column="30" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="590">
+              <caret line="59" column="9" lean-forward="true" selection-start-line="59" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/redux/actions/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-767">
+              <caret line="25" column="13" lean-forward="false" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AppReducer.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/redux/modules/AppReducer.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="26" column="28" lean-forward="false" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -122,7 +133,6 @@
         <option value="$PROJECT_DIR$/src/componenets/elements/Table/Column.js" />
         <option value="$PROJECT_DIR$/src/componenets/elements/Table/Table.css" />
         <option value="$PROJECT_DIR$/src/componenets/elements/Properties/PageConfig.js" />
-        <option value="$PROJECT_DIR$/src/redux/modules/PaperReducer.js" />
         <option value="$PROJECT_DIR$/src/componenets/elements/Elements/Element.css" />
         <option value="$PROJECT_DIR$/src/componenets/elements/Elements/Table/Table.css" />
         <option value="$PROJECT_DIR$/src/componenets/shared/Tools/Tools.js" />
@@ -138,12 +148,10 @@
         <option value="$PROJECT_DIR$/src/componenets/shared/Modal.js" />
         <option value="$PROJECT_DIR$/src/api/index.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
-        <option value="$PROJECT_DIR$/src/componenets/modals/PreviewModal.js" />
         <option value="$PROJECT_DIR$/src/redux/configureStore.js" />
         <option value="$PROJECT_DIR$/src/componenets/shared/Footer/Footer.css" />
         <option value="$PROJECT_DIR$/src/componenets/shared/Footer/Footer.js" />
         <option value="$PROJECT_DIR$/src/redux/modules/AppReducer.js" />
-        <option value="$PROJECT_DIR$/src/routes/Application.js" />
         <option value="$PROJECT_DIR$/src/routes/Welcome.js" />
         <option value="$PROJECT_DIR$/src/componenets/modals/CreateModal.js" />
         <option value="$PROJECT_DIR$/src/redux/actions/types.js" />
@@ -152,6 +160,9 @@
         <option value="$PROJECT_DIR$/src/componenets/elements/Elements/Table/Table.js" />
         <option value="$PROJECT_DIR$/src/componenets/shared/Header/Header.js" />
         <option value="$PROJECT_DIR$/src/componenets/elements/Paper/Paper.js" />
+        <option value="$PROJECT_DIR$/src/routes/Application.js" />
+        <option value="$PROJECT_DIR$/src/redux/modules/PaperReducer.js" />
+        <option value="$PROJECT_DIR$/src/componenets/modals/PreviewModal.js" />
       </list>
     </option>
   </component>
@@ -212,31 +223,27 @@
               <item name="netesnaf-designer" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="componenets" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="elements" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="modals" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="netesnaf-designer" type="b2602c69:ProjectViewProjectNode" />
               <item name="netesnaf-designer" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="componenets" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="elements" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Elements" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="redux" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="netesnaf-designer" type="b2602c69:ProjectViewProjectNode" />
               <item name="netesnaf-designer" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="componenets" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="elements" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Paper" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="redux" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="actions" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="netesnaf-designer" type="b2602c69:ProjectViewProjectNode" />
               <item name="netesnaf-designer" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="componenets" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="elements" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Properties" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="redux" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="modules" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="netesnaf-designer" type="b2602c69:ProjectViewProjectNode" />
@@ -318,12 +325,12 @@
       <workItem from="1507792195251" duration="12027000" />
       <workItem from="1507878396567" duration="5471000" />
       <workItem from="1508140494710" duration="6292000" />
-      <workItem from="1508224135510" duration="5815000" />
+      <workItem from="1508224135510" duration="8558000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="137999000" />
+    <option name="totallyTimeSpent" value="140742000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1060" extended-state="6" />
@@ -601,13 +608,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/modules/AppReducer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="26" column="28" lean-forward="false" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/routes/Welcome.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
@@ -615,24 +615,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/componenets/modals/PreviewModal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4941">
-          <caret line="188" column="2" lean-forward="false" selection-start-line="188" selection-start-column="2" selection-end-line="188" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/componenets/modals/CreateModal.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="248">
           <caret line="171" column="45" lean-forward="true" selection-start-line="171" selection-start-column="45" selection-end-line="171" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/actions/types.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="14" column="39" lean-forward="false" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
         </state>
       </provider>
     </entry>
@@ -655,24 +641,6 @@
         <state relative-caret-position="675">
           <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/modules/PaperReducer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="13" column="33" lean-forward="false" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes/Application.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-54">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="31" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#41#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -708,14 +676,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/actions/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="25" column="13" lean-forward="false" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/componenets/elements/Properties/Location.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -736,11 +696,59 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/componenets/elements/Paper/Paper.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="121" column="30" lean-forward="true" selection-start-line="121" selection-start-column="30" selection-end-line="121" selection-end-column="30" />
+        <state relative-caret-position="374">
+          <caret line="124" column="0" lean-forward="true" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/redux/modules/AppReducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="26" column="28" lean-forward="false" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/redux/actions/types.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="14" column="39" lean-forward="false" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/redux/actions/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-767">
+          <caret line="25" column="13" lean-forward="false" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/Application.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="590">
+          <caret line="59" column="9" lean-forward="true" selection-start-line="59" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/redux/modules/PaperReducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="13" column="16" lean-forward="true" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/componenets/modals/PreviewModal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="599">
+          <caret line="66" column="22" lean-forward="false" selection-start-line="66" selection-start-column="22" selection-end-line="66" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
