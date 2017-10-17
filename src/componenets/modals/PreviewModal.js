@@ -35,7 +35,10 @@ class PreviewModal extends Component {
       if(e.group === 'special') {
         elements[e.db_field] = e.properties.content;
       }else{
-        elements[e.db_field] = '';
+        if(this.state.elements !== undefined && this.state.elements[e.db_field] !== undefined){
+          elements[e.db_field] = '';
+
+        }
       }
       return e;
     });
