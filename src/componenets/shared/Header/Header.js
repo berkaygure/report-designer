@@ -14,9 +14,18 @@ class Header  extends  Component {
     this.state = {
       loading: false,
       text : ''
+    };
+    document.addEventListener("keyup", this.handleKeyDown.bind(this));
+
+  }
+  handleKeyDown(key) {
+    if(key.keyCode === 83 && key.ctrlKey){
+      this.saveApp();
+    }
+    if(key.keyCode === 80 && key.ctrlKey){
+      this.props.previewModal(true)
     }
   }
-
   saveApp() {
     this.setState({
       loading: true,

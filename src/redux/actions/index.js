@@ -1,13 +1,13 @@
 import {
-  ACTIVE_ITEM,
-  ADD_ITEM,
-  RE_POSITION,
-  REMOVE_ITEM,
-  CREATE_PAGE,
-  CHANGE_COLUMN,
-  UPDATE_COLUMN_ORDER,
-  SET_PROPERTY,
-  INIT_APP, CHANGE_BG, PREVIEW, SAVE, NEW_MODAL
+    ACTIVE_ITEM,
+    ADD_ITEM,
+    RE_POSITION,
+    REMOVE_ITEM,
+    CREATE_PAGE,
+    CHANGE_COLUMN,
+    UPDATE_COLUMN_ORDER,
+    SET_PROPERTY,
+    INIT_APP, CHANGE_BG, PREVIEW, SAVE, NEW_MODAL, CHANGE_SIZE
 } from './types';
 
 export const activeElements = id => {
@@ -99,3 +99,7 @@ export const saveState = save => {
     payload: save
   }
 };
+
+
+
+

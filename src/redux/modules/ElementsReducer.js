@@ -1,11 +1,11 @@
 import {
-  ADD_ITEM,
-  RE_POSITION,
-  REMOVE_ITEM,
-  CREATE_PAGE,
-  CHANGE_COLUMN,
-  UPDATE_COLUMN_ORDER,
-  SET_PROPERTY, INIT_APP,
+    ADD_ITEM,
+    RE_POSITION,
+    REMOVE_ITEM,
+    CREATE_PAGE,
+    CHANGE_COLUMN,
+    UPDATE_COLUMN_ORDER,
+    SET_PROPERTY, INIT_APP, CHANGE_SIZE,
 } from '../actions/types';
 
 const INITIAL_STATE = {
@@ -68,7 +68,6 @@ export default (state = INITIAL_STATE, action) => {
     }
     case UPDATE_COLUMN_ORDER: {
       const table = state.elements.find(x => x.element_type === 'table');
-
       return {
         ...state,
         elements: [
