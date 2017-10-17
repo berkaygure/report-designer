@@ -178,7 +178,8 @@ class Paper extends Component {
   render() {
     const pageSize = this.computePageSize();
     const pageConfig = {
-      ...pageSize,
+      width: (pageSize.width / this.props.paper.count)+1,
+      height: pageSize.height,
       backgroundImage: 'url(' + this.props.paper.tmpBg + ')',
     };
     return (
