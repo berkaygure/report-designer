@@ -2,11 +2,14 @@
   "name": "netesnaf-designer",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://fatura-tasarimcisi.berkaygure.com",
+
   "dependencies": {
     "axios": "^0.16.2",
     "bootstrap": "^4.0.0-alpha.6",
     "eslint-config-airbnb": "^15.1.0",
     "eslint-config-prettier": "^2.4.0",
+    "global": "^4.3.2",
     "history": "^4.7.2",
     "jquery": "^3.2.1",
     "jquery-ui-dist": "^1.12.1",
@@ -24,7 +27,8 @@
     "react-scripts": "1.0.13",
     "redux": "^3.7.2",
     "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "serve": "^6.3.1"
   },
   "scripts": {
     "start": "react-scripts start",
