@@ -32,8 +32,13 @@ class Paper extends Component {
         const droppedToolProperties = $(ui.draggable).data('props');
         const droppedPositionX = event.pageX - $(this).offset().left - event.offsetX;
         const droppedPositionY = event.pageY - $(this).offset().top - event.offsetY;
+        let max  = { id : 0}
+        if(that.props.elements!== undefined && that.props.elements.length > 0){
+          max = that.props.elements.reduce((prev, current) => (prev.id > current.id) ? prev : current)            
+        }
+        const id = max.id  + 1;        
         const newElement = {
-          id: that.props.elements.length + 1,
+          id,
           x: droppedPositionX,
           y: droppedPositionY,
           ...droppedToolProperties
@@ -134,9 +139,14 @@ class Paper extends Component {
     if (this.copiedItem !== undefined && this.copiedItem.id > -1 && this.copiedItem.element_type !== 'table') {
       if (this.mouseLocation !== undefined) {
         if (this.mouseLocation.x > 0 && this.mouseLocation.x < this.props.paper.w && this.mouseLocation.y > 0 && this.mouseLocation.y < this.props.paper.h) {
+          let max  = { id : 0}
+          if(this.props.elements!== undefined && this.props.elements.length > 0){
+            max = this.props.elements.reduce((prev, current) => (prev.id > current.id) ? prev : current)            
+          }
+          const id = max.id  + 1;  
           const newItem = {
             ...this.copiedItem,
-            id: this.props.elements.length + 1,
+            id,
             x: this.mouseLocation.x,
             y: this.mouseLocation.y
           };

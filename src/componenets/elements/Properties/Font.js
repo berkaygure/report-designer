@@ -10,7 +10,7 @@ class Font extends Component {
     this.sizes = [8, 9, 10, 11, 12, 14, 16, 18, 20, 22, 24, 26, 28, 36, 48, 72];
     this.state = {
       size: this.props.activeElement.properties.font.size,
-      fontFamily: '',
+      fontFamily: 'Dejavu Sans',
       bold: this.props.activeElement.properties.font.bold,
       italic: this.props.activeElement.properties.font.italic,
       underline: this.props.activeElement.properties.font.underline,
@@ -33,7 +33,7 @@ class Font extends Component {
 
     this.props.setProperty(prop);
   }
-
+  
   handleSelectChange(event) {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
@@ -84,9 +84,7 @@ class Font extends Component {
                  onChange={this.handleSelectChange.bind(this)}
                  value={this.state.fontFamily}
                >
-                 <option value="Tahoma">Tahoma</option>
-                 <option value="Arial">Arial</option>
-                 <option value="Courier new">Courier new</option>
+                 <option value="Dejavu Sans">Dejavu Sans</option>
                </select>
              </div>
            </div>

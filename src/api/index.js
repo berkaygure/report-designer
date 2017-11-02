@@ -1,4 +1,5 @@
-const BASE = 'http://localhost/jsonToPdf/';
+const BASE = 'http://fatura-tasarimcisi.berkaygure.com/api/';
+// const BASE = 'http://localhost/berkaygure.com/fatura-tasarimcisi/api/';
 export const INIT  = BASE + '?action=init';
 export const CREATE  = BASE + '?action=create';
 export const OPEN_APP  = BASE + '?action=open';
