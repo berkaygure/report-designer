@@ -1,10 +1,8 @@
-##Fatura Oluşturucu
+## Fatura Oluşturucu
 ReactJS ile geliştirilmekte olduğum fatura şablonu tasarlama yazılımı. Demosuna oluşmak için 
 http://fatura-tasarimcisi.berkaygure.com 
 
-Not: Api kısmı yeniden yazılacaktır.
-
-###Özellikleri
+### Özellikleri
 
 - PDF ve HTML çıktı verebilme
 - Sürükle bırak ile kolayca tasarlama
@@ -16,4 +14,3 @@ Not: Api kısmı yeniden yazılacaktır.
 - Şablon içerinde arkaplan resmi seçebilme
 - Demo veriler ile önizleme
 - Kendi Elemanını oluşturma (API tarafından sağlanır)
-- 
