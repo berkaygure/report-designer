@@ -1,0 +1,14 @@
+.editor-wrapper {
+    margin: 60px auto;
+    position:relative;
+    width: 672px;
+    height: 950px;
+}
+.editor {
+    margin: 0 auto;
+    background-color: #ffffff;
+    width: 672px;
+    height: 950px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+    position: relative;
+}

@@ -1,20 +1,127 @@
-body {
-  margin: 0;
-  font-family: sans-serif;
-  background-color: whitesmoke;
-  padding-top: 4.5rem;
+@import "helpers/_spacing-helpers.css";
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
 }
 
-.table-column-element {
-  margin: 5px;
-  padding: 10px;
-  cursor: move;
-  background-color: whitesmoke;
-  text-align: left;
+body {
+    background-color: #E4E4E4;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+    color: #707070;
 }
-.table-column-element.disabled {
-  background-color: #ddd;
+
+button.app-btn {
+    background-color: transparent;
+    border:none;
 }
-.table-column-element:hover {
-  background-color: #fff;
+
+#root {
+    display: flex;
+    height: 100vh;
+}
+
+.app {
+    display: flex;
+    flex:1;
+    height: 100vh;
+    justify-content:space-between;
+}
+
+.designer-area {
+    flex:1;
+    display: flex;
+    flex-direction: column;
+}
+
+.designer-title {
+    padding: 11px;
+    text-align: center;
+    background-color: #F7F7F7;
+}
+
+.editor-container {
+    flex: 1;
+    display: block;
+    overflow: scroll;
+}
+
+
+/** Toolbox and Layer Styles **/
+.tools-menu {
+    width: 290px;
+    background-color: #F7F7F7;
+    border-right: solid thin #E4E4E4;
+}
+
+.tool-btn {
+    padding: 15px;
+}
+
+.tool-btn svg {
+    margin-right: 10px;
+}
+
+.tool-btn span {
+    font-size: 12px;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+
+}
+
+/** The menu at the top of properties **/
+.application-menu {
+    padding: 11px;
+    border-bottom: thin solid #E4E4E4;
+    display: flex;
+    flex: 1;
+    justify-content: space-around;
+}
+
+.properties-window {
+    width: 290px;
+    background-color: #F7F7F7;
+    border-left: solid thin #E4E4E4;
+
+}
+/** General Panel Styles **/
+.panel { }
+
+.panel-header {
+    padding: 11px;
+    border-bottom: thin solid #E4E4E4;
+    border-top: thin solid #E4E4E4;
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+}
+
+.panel-body { }
+/** End Panel Style **/
+
+/** small pc **/
+@media only screen and (max-width: 1024px) {
+    .tools-menu {
+        display: none;
+        height: 100vh;
+        z-index: 100;
+        position: absolute;
+    }
+    .tools-menu.open {
+        display: block;
+    }
+}
+
+/** for iPads **/
+@media only screen and (max-width: 768px) {
+    .properties-window {
+        display: none;
+        height: 100vh;
+        z-index: 100;
+        position: absolute;
+    }
+    .properties-window.open {
+        display: block;
+    }
 }

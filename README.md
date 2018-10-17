@@ -1,16 +1,36 @@
-## Fatura Oluşturucu
-ReactJS ile geliştirilmekte olduğum fatura şablonu tasarlama yazılımı. Demosuna oluşmak için 
-http://fatura-tasarimcisi.berkaygure.com 
+Report Designer
+================
+**[EN]**
 
-### Özellikleri
+Report Designer is a design tool for your invoices, waybills or other stuffs that are being developed with React JS.
 
-- PDF ve HTML çıktı verebilme
-- Sürükle bırak ile kolayca tasarlama
-- Sayfa şablonu (A4,A5, gibi) tanımlayabilme
-- Yatay veya Dikey Olarak tasarlama
-- Şablonları gruplama
-- Bir sayfada birden fazla fatura basabilme
-- Kendi uygulamanızdaki fatura tablosu ile entegre edilebilir.
-- Şablon içerinde arkaplan resmi seçebilme
-- Demo veriler ile önizleme
-- Kendi Elemanını oluşturma (API tarafından sağlanır)
+For more information and using guide please check the documentation.
+
+**[TR]**
+
+Fatura Tasarımcısı, React JS ile geliştirilmekte olan, fatura, irsaliye ve daha fazlasını tasarlayabileceğiniz bir araçtır.
+
+Daha fazla detay için dokümantasyona göz atın.
+
+## Using 
+
+### Basic Setup
+
+**[EN]** 
+
+You can start to use basically. Firstly you should clone the repository, after that run `npm install` command to install dependencies. Lastly give the start with `npm start`.    
+
+Or you can download a release and open directly in your browser.
+
+**[TR]**
+
+Bu repoyu bilgisayarınza indirin. Sonrasında `npm install` komutu ile bağımlılıkları yükleyin ve `npm start` komutu ile uygulamayı çalıştırın.
+
+Ya da direk release menüsünden bir versiyon indirerek doğrudan tarayıcınızda çalıştırabilirsiniz. 
+
+
+## Contributing
+Please read [CONTRIBUTING.md](https://github.com/berkaygure/fatura-tasarimi/blob/master/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests.
+
+## Credit
+- [Berkay Güre](https://github.com/berkaygure)

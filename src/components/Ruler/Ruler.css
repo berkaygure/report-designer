@@ -1,0 +1,83 @@
+
+.ruler {
+    position: absolute;
+    font-size: 9px;
+    line-height: 8px;
+    z-index: 10;
+}
+
+/* Horizontal Ruler */
+
+.ruler.ruler-h {
+    height: 15px;
+    padding-top: 1px;
+    z-index: 8;
+    top: -20px;
+
+}
+
+.ruler-h .tick {
+    position: absolute;
+    float: left;
+    border-left: 1px solid #b9b7b5;
+    width: 32px;
+    height: 15px;
+
+}
+.ruler-h .tick:last-child {
+    border-right: 1px solid #b9b7b5;
+}
+
+.rulerHNumber {
+    position: absolute;
+    top: 0;
+    left: 2px;
+}
+
+.rulerHNumber:before {
+    display: table;
+    content: '';
+}
+
+.rulerHNumber:after {
+    clear: both;
+}
+
+
+/* Vertical Ruler */
+
+.ruler.ruler-v {
+    width: 15px;
+    padding-top: 1px;
+    z-index: 8;
+    top: 0;
+    margin-left: -20px;
+}
+
+
+.ruler-v .tick {
+    position: absolute;
+    border-top: 1px solid #b9b7b5;
+    width: 15px;
+    padding-left: 3px;
+    height: 32px;
+}
+
+.ruler-v .tick:last-child {
+    border-bottom: 1px solid #b9b7b5;
+}
+
+.rulerVNumber {
+    position: absolute;
+    top: 2px;
+    left: 0;
+}
+
+.rulerVNumber:before {
+    display: table;
+    content: '';
+}
+
+.rulerVNumber:after {
+    clear: both;
+}

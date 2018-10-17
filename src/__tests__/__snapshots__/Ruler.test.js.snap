@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HorizontalRuler /> should be draw horizontal ruler 1`] = `
+<div
+  className="ruler ruler-h"
+/>
+`;
+
+exports[`<VerticalRuler /> should be draw vertical ruler 1`] = `
+<div
+  className="ruler ruler-v"
+/>
+`;
