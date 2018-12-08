@@ -1,11 +1,10 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { changeBg } from '../../../redux/actions';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { changeBg } from "../../../redux/actions";
 import CardAccordion from "../../shared/CardAccordion";
 
 class PageConfig extends Component {
-
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       tmpBg: []
@@ -13,35 +12,41 @@ class PageConfig extends Component {
     this.onChange = this.onChange.bind(this);
   }
 
-  onChange (){
+  onChange() {
     const that = this;
-    const file = this.file.files[0];
     const reader = new FileReader();
-    const url = reader.readAsDataURL(file);
-    reader.onloadend = (e) => {
+
+    reader.onloadend = e => {
       that.props.changeBg({
         tmpBg: [reader.result]
       });
-    }
+    };
   }
 
   render() {
     return (
       <CardAccordion title={"Sayfa Ayarları"} parent={"accordionProperties"}>
-        <div style={{padding:'6px 15px',margin: '0 auto',textAlign: 'left'}}>
+        <div
+          style={{ padding: "6px 15px", margin: "0 auto", textAlign: "left" }}
+        >
           <div className="form-group">
-            <label htmlFor="xPos" className="col-form-label">Arkaplan</label>
+            <label htmlFor="xPos" className="col-form-label">
+              Arkaplan
+            </label>
             <input
-              ref={file => this.file = file}
+              ref={file => (this.file = file)}
               type="file"
               name="user[image]"
               multiple="true"
-              onChange={this.onChange}/>
+              onChange={this.onChange}
+            />
           </div>
-
         </div>
       </CardAccordion>
-    )
+    );
   }
 }
-export default connect(null, {changeBg})(PageConfig);
+export default connect(
+  null,
+  { changeBg }
+)(PageConfig);

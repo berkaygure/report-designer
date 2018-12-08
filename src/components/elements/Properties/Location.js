@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { changePostion } from '../../../redux/actions';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { changePostion } from "../../../redux/actions";
 import CardAccordion from "../../shared/CardAccordion";
 
 class Location extends Component {
@@ -8,14 +8,14 @@ class Location extends Component {
     super(props);
     this.state = {
       xPos: 0,
-      yPos: 0,
+      yPos: 0
     };
   }
 
   componentWillReceiveProps() {
     this.setState({
       xPos: (this.props.activeElement.x / 32).toFixed(2),
-      yPos: (this.props.activeElement.y / 32).toFixed(2),
+      yPos: (this.props.activeElement.y / 32).toFixed(2)
     });
   }
 
@@ -36,38 +36,49 @@ class Location extends Component {
   }
 
   render() {
-    const { x, y } = this.props.activeElement;
     return (
       <CardAccordion title={"Konumlama"} parent={"accordionProperties"}>
-        <div style={{padding:'6px 15px',margin: '0 auto',textAlign: 'left'}}>
+        <div
+          style={{ padding: "6px 15px", margin: "0 auto", textAlign: "left" }}
+        >
           <div className="form-group row">
-            <label htmlFor="xPos" className="col-6 col-form-label">Soldan</label>
+            <label htmlFor="xPos" className="col-6 col-form-label">
+              Soldan
+            </label>
             <div className="col-6">
               <div className="input-group input-group">
                 <input
                   value={this.state.xPos}
                   onChange={e => this.changeXPos(e)}
                   onBlur={e => this.updateElementXPos(e)}
-                  className="form-control form-control" type="text"id="xPos"/>
-                <span className="input-group-addon" id="basic-addon1">cm</span>
-
+                  className="form-control form-control"
+                  type="text"
+                  id="xPos"
+                />
+                <span className="input-group-addon" id="basic-addon1">
+                  cm
+                </span>
               </div>
-
             </div>
           </div>
           <div className="form-group row">
-            <label htmlFor="yPos" className="col-6 col-form-label">Üstten</label>
+            <label htmlFor="yPos" className="col-6 col-form-label">
+              Üstten
+            </label>
             <div className="col-6">
               <div className="input-group input-group">
                 <input
                   onChange={e => this.changeYPos(e)}
                   onBlur={e => this.updateElementYPos(e)}
                   value={this.state.yPos}
-                  className="form-control form-control" type="text"id="yPos"/>
-                <span className="input-group-addon" id="basic-addon1">cm</span>
-
+                  className="form-control form-control"
+                  type="text"
+                  id="yPos"
+                />
+                <span className="input-group-addon" id="basic-addon1">
+                  cm
+                </span>
               </div>
-
             </div>
           </div>
         </div>
@@ -77,7 +88,10 @@ class Location extends Component {
 }
 const mapStateToProps = state => {
   return {
-    activeElement: state.activeElement.element,
+    activeElement: state.activeElement.element
   };
 };
-export default connect(mapStateToProps,  { changePostion })(Location);
+export default connect(
+  mapStateToProps,
+  { changePostion }
+)(Location);
