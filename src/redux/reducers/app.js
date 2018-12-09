@@ -4,7 +4,7 @@ const INITIAL_STATE = {
   tools: [],
   objects: [
     {
-      obj: 1
+      obj: 2
     }
   ]
 };
