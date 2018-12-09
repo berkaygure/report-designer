@@ -12,7 +12,8 @@ export const loadSettings = () => {
   return async dispatch => {
     try {
       const res = await axios.get('./settings.json');
-      dispatch(initializeApp(res.data));
+      const data = await res.data;
+      dispatch(initializeApp(data));
     } catch (e) {}
   };
 };

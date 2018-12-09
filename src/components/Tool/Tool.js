@@ -17,10 +17,10 @@ class Tool extends React.Component {
           })
         )
       }
-      className="text-center hover:bg-grey-lighter p-2 bg-grey-lightest w-full text-grey-dark border-b border-grey-lighter text-sm outline-none"
+      className="pl-5 hover:bg-grey-lighter p-2 bg-grey-lightest w-full text-grey-dark border-b border-grey-light text-sm outline-none"
       draggable
     >
-      <FontAwesomeIcon className="text-grey-dark" icon={ this.props.icon } />{' '}
+      <FontAwesomeIcon className="text-grey-dark mr-2" icon={ this.props.icon } />{' '}
       {this.props.title}
     </div>
   );

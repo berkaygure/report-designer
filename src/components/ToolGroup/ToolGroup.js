@@ -21,10 +21,10 @@ class ToolGroup extends Component {
 
   render = () => (
     <div>
-      <div className="rounded-lg border border-grey-light bg-white mb-5 p-1 w-full">
+      <div className="rounded-lg border border-grey-light bg-white mb-5 w-full">
         <h4
           onClick={ () => this.toggle() }
-          className="collapse-handler p-3 font-medium  bg-white w-full"
+          className="m-1 collapse-handler p-3 font-medium  bg-white"
         >
           {this.props.title}
         </h4>

@@ -2,12 +2,22 @@ import React from 'react';
 import Editor from './components/Editor/Editor';
 import { Header, ToolGroup } from './components';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faStroopwafel } from '@fortawesome/free-solid-svg-icons';
+import {
+  faGavel,
+  faBuilding,
+  faEnvelope,
+  faPhone,
+  faCalendarAlt
+} from '@fortawesome/free-solid-svg-icons';
 import { connect } from 'react-redux';
 import { loadSettings } from './redux/actions';
 import PropTypes from 'prop-types';
 
-library.add(faStroopwafel);
+library.add(faGavel);
+library.add(faBuilding);
+library.add(faEnvelope);
+library.add(faPhone);
+library.add(faCalendarAlt);
 
 class App extends React.Component {
   componentDidMount = () => {
