@@ -7,7 +7,16 @@ class Tool extends React.Component {
 
   render = () => (
     <div
-      onDragStart={ e => e.dataTransfer.setData('test', 1) }
+      onDragStart={ e =>
+        e.dataTransfer.setData(
+          'tool',
+          JSON.stringify({
+            title: this.props.title,
+            style: this.props.style,
+            type: this.props.type
+          })
+        )
+      }
       className="text-center hover:bg-grey-lighter p-2 bg-grey-lightest w-full text-grey-dark border-b border-grey-lighter text-sm outline-none"
       draggable
     >
@@ -19,7 +28,8 @@ class Tool extends React.Component {
 
 Tool.propTypes = {
   title: PropTypes.string.isRequired,
-  icon: PropTypes.string.isRequired
+  icon: PropTypes.string.isRequired,
+  style: PropTypes.object.isRequired
 };
 
 export default Tool;

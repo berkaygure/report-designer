@@ -2,19 +2,31 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import HorizontalRuler from '../Ruler/HorizontalRuler';
 import VerticalRuler from '../Ruler/VerticalRuler';
-import Draggable from '../Draggable/Draggable';
 import { connect } from 'react-redux';
-import { addToScene } from '../../redux/actions';
+import { addToScene, makeElementActive } from '../../redux/actions';
 import './Editor.css';
+import Default from '../ElementTypes/Default';
+import _ from 'lodash';
 
 class Editor extends Component {
   onDrop = e => {
-    this.props.addToScene();
+    const tool = JSON.parse(e.dataTransfer.getData('tool'));
+    this.props.addToScene({
+      id: _.uniqueId('element_'),
+      type: tool.type,
+      content: tool.title,
+      style: tool.style
+    });
+  };
+
+  selectPage = () => {
+    this.props.makeElementActive(null);
   };
 
   render() {
     return (
       <div
+        onClickCapture={ () => this.selectPage() }
         onDragOver={ e => e.preventDefault() }
         onDrop={ e => this.onDrop(e) }
         className="editor-wrapper"
@@ -23,8 +35,13 @@ class Editor extends Component {
         {this.rulerY()}
         <div className="editor">
           {this.props.objects &&
-            this.props.objects.map((object, order) => {
-              return <Draggable key={ order } />;
+            this.props.objects.map(object => {
+              switch (object.type) {
+                case 'default':
+                  return <Default context={ object } key={ object.id } />;
+                default:
+                  return null;
+              }
             })}
         </div>
       </div>
@@ -68,6 +85,7 @@ const mapStateToProp = (state, props) => {
 export default connect(
   mapStateToProp,
   {
-    addToScene
+    addToScene,
+    makeElementActive
   }
 )(Editor);

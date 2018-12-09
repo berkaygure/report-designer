@@ -15,10 +15,16 @@
 .react-resizable {
     position: absolute;
 }
+
 /** end react-resizable */
 
 .draggable {
     position: absolute;
-    border: thin solid #6483ee;
+    border: thin solid #ccc;
     display: inline-block;
+}
+
+.draggable.active {
+    border-color: #6483ee;
+
 }

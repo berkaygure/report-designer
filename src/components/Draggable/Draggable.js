@@ -2,34 +2,83 @@ import React, { Component } from 'react';
 import * as ReactDraggable from 'react-draggable';
 import { Resizable } from 'react-resizable';
 import './Draggable.css';
-
+import { connect } from 'react-redux';
+import { makeElementActive } from '../../redux/actions';
 class Draggable extends Component {
-    state = { width: 200, height: 200 };
-    onResize = (event, data) => {
-        const { element, size } = data;
-        const { width, height } = size;
-        const widthChanged = width !== this.state.width, heightChanged = height !== this.state.height;
-        if (!widthChanged && !heightChanged) return;
+  state = { width: 200, height: 50, isActive: false };
 
-        this.setState({ width, height }, () => {
-            if (this.props.onResize) {
-                this.props.onResize(event, { element, size: { width, height } });
-            }
-        });
-    };
+  onSelectItem = () => {
+    this.props.makeElementActive(this.props.id);
+  };
 
-    render() {
-        return (
-            <ReactDraggable bounds="parent" cancel=".react-resizable-handle">
-                <Resizable className="box" height={ this.state.height } width={ this.state.width } onResize={ this.onResize.bind(this) }
-                    draggableOpts={ { onResize: e => e.stopPropagation() } }>
-                    <div className="draggable" style={ { width: this.state.width + 'px', height: this.state.height + 'px' } }>
-                        <span className="text">Drag me around the world. xD</span>
-                    </div>
-                </Resizable>
-            </ReactDraggable>
-        )
-    }
+  componentDidMount = () => {
+    this.setState({
+      width: this.props.style.width,
+      height: this.props.style.height
+    });
+  };
+
+  onResize = (event, data) => {
+    this.onSelectItem();
+    const { element, size } = data;
+    const { width, height } = size;
+    const widthChanged = width !== this.state.width;
+    const heightChanged = height !== this.state.height;
+
+    if (!widthChanged && !heightChanged) return;
+
+    this.setState({ width, height }, () => {
+      if (this.props.onResize) {
+        this.props.onResize(event, { element, size: { width, height } });
+      }
+    });
+  };
+
+  onStartDrag = () => {
+    this.onSelectItem();
+  };
+
+  render() {
+    const { width, height } = this.state;
+    const { id, activeElement } = this.props;
+    return (
+      <ReactDraggable
+        onStart={ () => this.onStartDrag() }
+        bounds="parent"
+        cancel=".react-resizable-handle"
+      >
+        <Resizable
+          className="box"
+          height={ height }
+          width={ width }
+          onResize={ this.onResize.bind(this) }
+          draggableOpts={ { onResize: e => e.stopPropagation() } }
+        >
+          <div
+            onClick={ () => this.onSelectItem() }
+            className={ `draggable ${
+              activeElement && id == activeElement.id ? 'active' : ''
+            }` }
+            style={ { width: width, height: height } }
+          >
+            {this.props.children}
+          </div>
+        </Resizable>
+      </ReactDraggable>
+    );
+  }
 }
 
-export default Draggable;
+const mapStateToProp = state => {
+  return {
+    ...state,
+    activeElement: state.appReducers.activeElement
+  };
+};
+
+export default connect(
+  mapStateToProp,
+  {
+    makeElementActive
+  }
+)(Draggable);

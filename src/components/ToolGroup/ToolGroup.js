@@ -42,7 +42,13 @@ class ToolGroup extends Component {
               ) : null}
               {this.props.tools &&
                 this.props.tools.map((tool, i) => (
-                  <Tool key={ i } icon={ tool.icon } title={ tool.title } />
+                  <Tool
+                    key={ i }
+                    icon={ tool.icon }
+                    style={ tool.style }
+                    type={ tool.type }
+                    title={ tool.title }
+                  />
                 ))}
             </div>
           )}
