@@ -29,6 +29,11 @@
     "lint": "eslint src/",
     "lint:fix": "eslint src/ --fix"
   },
+  "git": {
+    "scripts": {
+      "pre-push": "yarn build && surge --project ./build --domain reporteditor.surge.sh"
+    }
+  },
   "devDependencies": {
     "babel-loader": "^8.0.4",
     "enzyme": "^3.6.0",
@@ -36,7 +41,9 @@
     "eslint-loader": "^2.1.1",
     "eslint-plugin-react": "^7.11.1",
     "react-test-renderer": "^16.5.2",
-    "tailwindcss": "^0.7.2"
+    "tailwindcss": "^0.7.2",
+    "surge": "latest",
+    "git-scripts": "0.2.1"
   },
   "browserslist": [
     ">0.2%",
