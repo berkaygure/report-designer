@@ -18,7 +18,7 @@ describe('<HorizontalRuler />', () => {
     });
 
     it('renders tick `.tick`', () => {
-        const wrapper = shallow(<HorizontalRuler width={PAPER_WIDTH} />);
+        const wrapper = shallow(<HorizontalRuler width={ PAPER_WIDTH } />);
         expect(wrapper.find('.tick')).toHaveLength(Math.ceil(PAPER_WIDTH / PER_PIXEL));
     });
 });
@@ -32,7 +32,7 @@ describe('<VerticalRuler />', () => {
     });
 
     it('renders tick `.tick`', () => {
-        const wrapper = shallow(<VerticalRuler height={PAPER_HEIGHT} />);
+        const wrapper = shallow(<VerticalRuler height={ PAPER_HEIGHT } />);
         expect(wrapper.find('.tick')).toHaveLength(Math.ceil(PAPER_HEIGHT / PER_PIXEL));
     });
 })

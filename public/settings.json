@@ -1,0 +1,13 @@
+{
+  "tools": [{
+    "title": "Genel Fatura Öğeleri",
+    "description": "Fatura öğelerini sürükleyip sayfada istediğiniz yere bırakabilirsiniz.",
+    "items": [{
+      "title": "Test",
+      "icon": "stroopwafel"
+    }, {
+      "title": "Test1",
+      "icon": "stroopwafel"
+    }]
+  }]
+}
