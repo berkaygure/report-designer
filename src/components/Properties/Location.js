@@ -20,7 +20,7 @@ class Location extends Component {
               </td>
             </tr>
             <tr>
-              <td> {this.props.t('<location className="top"></location>')} </td>
+              <td> {this.props.t('location.top')} </td>
               <td>
                 <input
                   type="text"
