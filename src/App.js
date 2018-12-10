@@ -12,6 +12,8 @@ import {
 import { connect } from 'react-redux';
 import { loadSettings } from './redux/actions';
 import PropTypes from 'prop-types';
+import Location from './components/Properties/Location';
+import { withNamespaces } from 'react-i18next';
 
 library.add(faGavel);
 library.add(faBuilding);
@@ -28,7 +30,7 @@ class App extends React.Component {
     <div className="flex flex-col h-full flex-1">
       <Header />
       <div className="w-full flex flex-1 justify-between">
-        <div className="bg-grey-lighter p-3 shadow" style={ { width: 500 } }>
+        <div className="bg-grey-lightest p-3 shadow w-1/4">
           {this.props.tools &&
             this.props.tools.map((tool, i) => (
               <ToolGroup
@@ -40,10 +42,12 @@ class App extends React.Component {
               />
             ))}
         </div>
-        <div className="bg-grey-lighter  p-3 w-full overflow-y-scroll">
+        <div className="bg-grey-lightest  p-3 w-full overflow-y-scroll">
           <Editor width={ 672 } height={ 950 } />
         </div>
-        <div className="bg-grey-lightest shadow  p-3" style={ { width: 600 } } />
+        <div className="bg-grey-lightest shadow  p-5 w-1/3">
+          <Location />
+        </div>
       </div>
       <footer className="w-full text-center border-t border-grey-lighter p-4 bg-grey-lightest text-sm">
         report-designer version 2.0
@@ -69,4 +73,4 @@ const mapDispatchToProps = {
 export default connect(
   mapStateToProp,
   mapDispatchToProps
-)(App);
+)(withNamespaces()(App));

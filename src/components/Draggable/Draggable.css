@@ -22,6 +22,7 @@
     position: absolute;
     border: thin solid #ccc;
     display: inline-block;
+    font-size: 12px;
 }
 
 .draggable.active {
