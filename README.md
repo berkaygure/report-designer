@@ -2,6 +2,9 @@
 ReactJS ile geliştirilmekte olduğum fatura şablonu tasarlama yazılımı. Demosuna oluşmak için 
 http://fatura-tasarimcisi.berkaygure.com 
 
+Versiyon 2 demosu http://reporteditor.surge.sh/
+
+
 ### Özellikleri
 
 - PDF ve HTML çıktı verebilme
