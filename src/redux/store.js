@@ -6,11 +6,16 @@ const initialState = {};
 
 const middleware = [ thunk ];
 
-const allEnhancers = compose(
-  applyMiddleware(...middleware),
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
+let allEnhancers;
 
+if (console.log(process.env.NODE_ENV === 'development')) {
+  allEnhancers = compose(
+    applyMiddleware(...middleware),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  );
+} else {
+  allEnhancers = compose(applyMiddleware(...middleware));
+}
 const store = createStore(rootReducers, initialState, allEnhancers);
 
 export default store;
