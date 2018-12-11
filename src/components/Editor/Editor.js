@@ -15,7 +15,11 @@ class Editor extends Component {
       id: _.uniqueId('element_'),
       type: tool.type,
       content: tool.title,
-      style: tool.style
+      style: {
+        ...tool.style,
+        x: e.clientX - e.currentTarget.offsetLeft,
+        y: e.clientY - e.currentTarget.offsetTop
+      }
     });
   };
 

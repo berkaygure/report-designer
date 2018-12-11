@@ -40,11 +40,15 @@ class Draggable extends Component {
 
   render() {
     const { width, height } = this.state;
-    const { id, activeElement } = this.props;
+    const { id, activeElement, style } = this.props;
     return (
       <ReactDraggable
         onStart={ () => this.onStartDrag() }
         bounds="parent"
+        defaultPosition={ {
+          x: style.x,
+          y: style.y
+        } }
         cancel=".react-resizable-handle"
       >
         <Resizable
