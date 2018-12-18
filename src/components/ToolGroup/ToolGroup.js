@@ -45,7 +45,7 @@ class ToolGroup extends Component {
                   <Tool
                     key={ i }
                     icon={ tool.icon }
-                    style={ tool.style }
+                    properties={ tool.properties }
                     type={ tool.type }
                     title={ tool.title }
                   />

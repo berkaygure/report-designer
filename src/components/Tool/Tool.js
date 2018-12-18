@@ -10,7 +10,7 @@ class Tool extends React.Component {
       'tool',
       JSON.stringify({
         title: this.props.title,
-        style: this.props.style,
+        properties: this.props.properties,
         type: this.props.type
       })
     );
@@ -31,7 +31,7 @@ class Tool extends React.Component {
 Tool.propTypes = {
   title: PropTypes.string.isRequired,
   icon: PropTypes.string.isRequired,
-  style: PropTypes.object.isRequired,
+  properties: PropTypes.object.isRequired,
   type: PropTypes.string.isRequired
 };
 

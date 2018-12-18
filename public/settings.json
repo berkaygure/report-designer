@@ -6,9 +6,18 @@
         "title": "Customer Title",
         "icon": "building",
         "type": "default",
-        "style": {
-          "width": 200,
-          "height": 20
+        "properties": {
+          "location": {
+            "x": 10,
+            "y": 10
+          },
+          "size": {
+            "w": 200,
+            "h": 20
+          },
+          "font": {
+
+          }
         }
       }, {
         "title": "Cutomer Address",

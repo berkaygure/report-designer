@@ -1,6 +1,6 @@
 import React from 'react';
 import Editor from './components/Editor/Editor';
-import { Header, ToolGroup } from './components';
+import { Header, ToolGroup, PropertiesPanel } from './components';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
   faGavel,
@@ -12,7 +12,6 @@ import {
 import { connect } from 'react-redux';
 import { loadSettings } from './redux/actions';
 import PropTypes from 'prop-types';
-import Location from './components/Properties/Location';
 import { withNamespaces } from 'react-i18next';
 
 library.add(faGavel);
@@ -45,9 +44,13 @@ class App extends React.Component {
         <div className="bg-grey-lightest  p-3 w-full overflow-y-scroll">
           <Editor width={ 672 } height={ 950 } />
         </div>
-        <div className="bg-grey-lightest shadow  p-5 w-1/3">
-          <Location />
-        </div>
+        <PropertiesPanel
+          properties={
+            this.props.activeElement
+              ? this.props.activeElement.properties
+              : null
+          }
+        />
       </div>
       <footer className="w-full text-center border-t border-grey-lighter p-4 bg-grey-lightest text-sm">
         report-designer version 2.0
@@ -58,12 +61,14 @@ class App extends React.Component {
 
 App.propTypes = {
   initializeApp: PropTypes.func.isRequired,
-  tools: PropTypes.array
+  tools: PropTypes.array,
+  activeElement: PropTypes.object
 };
 
 const mapStateToProp = (state, props) => {
   return {
-    tools: state.appReducers.tools
+    tools: state.appReducers.tools,
+    activeElement: state.appReducers.activeElement
   };
 };
 const mapDispatchToProps = {

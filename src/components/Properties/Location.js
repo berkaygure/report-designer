@@ -1,7 +1,31 @@
 import React, { Component } from 'react';
 import { withNamespaces } from 'react-i18next';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { updateProperties } from '../../redux/actions';
+import { convertToCm, convertToPx } from '../../helpers/Dimensions';
 
 class Location extends Component {
+  state = { x: 0, y: 0 };
+
+  componentWillReceiveProps() {
+    this.setState({
+      x: convertToCm(this.props.x),
+      y: convertToCm(this.props.y)
+    });
+  }
+
+  handleChange = event => {
+    this.setState(
+      {
+        [event.target.name]: convertToPx(event.target.value)
+      },
+      () => {
+        this.props.updateProperties('location', this.state);
+      }
+    );
+  };
+
   render() {
     return (
       <div className="rounded-lg border border-grey-light bg-white mb-5 w-full">
@@ -15,6 +39,9 @@ class Location extends Component {
               <td>
                 <input
                   type="text"
+                  value={ this.state.x }
+                  name="x"
+                  onChange={ this.handleChange }
                   className="p-1 text-center bg-grey-light rounded w-1/2 outline-none"
                 />
               </td>
@@ -24,6 +51,9 @@ class Location extends Component {
               <td>
                 <input
                   type="text"
+                  value={ this.state.y }
+                  name="y"
+                  onChange={ this.handleChange }
                   className="p-1 text-center bg-grey-light rounded w-1/2 outline-none"
                 />
               </td>
@@ -35,4 +65,24 @@ class Location extends Component {
   }
 }
 
-export default withNamespaces()(Location);
+Location.propTypes = {
+  activeElement: PropTypes.object,
+  updateProperties: PropTypes.func,
+  x: PropTypes.number,
+  y: PropTypes.number
+};
+
+const mapStateToProps = state => {
+  return {
+    activeElement: state.appReducers.activeElement
+  };
+};
+
+export default withNamespaces()(
+  connect(
+    mapStateToProps,
+    {
+      updateProperties
+    }
+  )(Location)
+);

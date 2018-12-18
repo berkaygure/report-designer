@@ -1,4 +1,5 @@
 import ToolGroup from './ToolGroup/ToolGroup';
 import Header from './Header';
+import PropertiesPanel from './PropertiesPanel';
 
-export { ToolGroup, Header };
+export { ToolGroup, Header, PropertiesPanel };

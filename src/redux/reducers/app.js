@@ -1,7 +1,8 @@
 import {
   INITIALIZE_APP,
   ADD_TO_SCENE,
-  MAKE_ELEMENT_ACTIVE
+  MAKE_ELEMENT_ACTIVE,
+  UPDATE_PROPERTIES
 } from '../actions/types';
 import _ from 'lodash';
 
@@ -28,6 +29,17 @@ export default (state = INITIAL_STATE, action) => {
       return {
         ...state,
         activeElement: _.find(state.objects, [ 'id', action.payload ])
+      };
+    case UPDATE_PROPERTIES:
+      return {
+        ...state,
+        activeElement: {
+          ...state.activeElement,
+          properties: {
+            ...state.activeElement.properties,
+            [action.payload.propertyName]: action.payload.properties
+          }
+        }
       };
     default:
       return state;
