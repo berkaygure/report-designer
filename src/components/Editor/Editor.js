@@ -71,7 +71,8 @@ Editor.propTypes = {
   width: PropTypes.number,
   height: PropTypes.number,
   objects: PropTypes.array,
-  addToScene: PropTypes.func
+  addToScene: PropTypes.func,
+  makeElementActive: PropTypes.func
 };
 
 Editor.defaultProps = {

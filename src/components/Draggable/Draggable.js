@@ -4,6 +4,8 @@ import { Resizable } from 'react-resizable';
 import './Draggable.css';
 import { connect } from 'react-redux';
 import { makeElementActive } from '../../redux/actions';
+import PropTypes from 'prop-types';
+
 class Draggable extends Component {
   state = { width: 200, height: 50, isActive: false };
 
@@ -20,6 +22,7 @@ class Draggable extends Component {
 
   onResize = (event, data) => {
     this.onSelectItem();
+
     const { element, size } = data;
     const { width, height } = size;
     const widthChanged = width !== this.state.width;
@@ -61,7 +64,7 @@ class Draggable extends Component {
           <div
             onClick={ () => this.onSelectItem() }
             className={ `draggable ${
-              activeElement && id == activeElement.id ? 'active' : ''
+              activeElement && id === activeElement.id ? 'active' : ''
             }` }
             style={ { width: width, height: height } }
           >
@@ -78,6 +81,15 @@ const mapStateToProp = state => {
     ...state,
     activeElement: state.appReducers.activeElement
   };
+};
+
+Draggable.propTypes = {
+  children: PropTypes.object,
+  id: PropTypes.string,
+  activeElement: PropTypes.object,
+  style: PropTypes.object,
+  onResize: PropTypes.func,
+  makeElementActive: PropTypes.func
 };
 
 export default connect(
