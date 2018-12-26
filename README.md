@@ -1,6 +1,8 @@
 # Report Designer
 
-You can checkout [DEMO](http://reporteditor.surge.sh/)
+You can take a look [DEMO](http://reporteditor.surge.sh/)
+
+You can take a look for [v1](http://fatura-tasarimcisi.berkaygure.com)
 
 **[EN]**
 
@@ -14,19 +16,21 @@ Fatura Tasarımcısı, React JS ile geliştirilmekte olan, fatura, irsaliye ve d
 
 Daha fazla detay için dokümantasyona göz atın.
 
+Eski sürüm için [buradan] (https://github.com/berkaygure/fatura-tasarimi/tree/v1.0)
+
 ## Using
 
 ### Basic Setup
 
 **[EN]**
 
-You can start to use basically. Firstly you should clone the repository, after that run `npm install` command to install dependencies. Lastly give the start with `npm start`.
+You can start to use basically. Firstly you should clone the repository, after that run `yarn install` command to install dependencies. Lastly give the start with `yarn start`.
 
 Or you can download a release and open directly in your browser.
 
 **[TR]**
 
-Bu repoyu bilgisayarınza indirin. Sonrasında `npm install` komutu ile bağımlılıkları yükleyin ve `npm start` komutu ile uygulamayı çalıştırın.
+Bu repoyu bilgisayarınza indirin. Sonrasında `yarn install` komutu ile bağımlılıkları yükleyin ve `yarn start` komutu ile uygulamayı çalıştırın.
 
 Ya da direk release menüsünden bir versiyon indirerek doğrudan tarayıcınızda çalıştırabilirsiniz.
 
