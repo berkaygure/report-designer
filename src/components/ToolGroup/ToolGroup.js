@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import Tool from '../Tool/Tool';
 
 class ToolGroup extends Component {
+
   state = {
     collapse: false
   };

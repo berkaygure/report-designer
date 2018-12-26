@@ -11,6 +11,7 @@ import _ from 'lodash';
 class Editor extends Component {
   onDrop = e => {
     const tool = JSON.parse(e.dataTransfer.getData('tool'));
+
     this.props.addToScene({
       id: _.uniqueId('element_'),
       type: tool.type,
@@ -25,14 +26,17 @@ class Editor extends Component {
     });
   };
 
-  selectPage = () => {
-    this.props.makeElementActive(null);
+  onSelectEditor = e => {
+    // Maybe this is dirty solution by it works
+    if (e.target.classList.contains('editor')) {
+      this.props.makeElementActive(null);
+    }
   };
 
   render() {
     return (
       <div
-        onClickCapture={ () => this.selectPage() }
+        onClickCapture={ this.onSelectEditor }
         onDragOver={ e => e.preventDefault() }
         onDrop={ e => this.onDrop(e) }
         className="editor-wrapper"
@@ -54,12 +58,19 @@ class Editor extends Component {
     );
   }
 
+  /**
+   *  Horizontal Ruler instance
+   */
   rulerX() {
     return this.props.showRuler === true ||
       this.props.showRuler.toString().toLocaleLowerCase() === 'x' ? (
       <HorizontalRuler width={ this.props.width } />
     ) : null;
   }
+
+  /**
+   *  Vertical Ruler instance
+   */
   rulerY() {
     return this.props.showRuler === true ||
       this.props.showRuler.toString().toLocaleLowerCase() === 'y' ? (
@@ -83,7 +94,7 @@ Editor.defaultProps = {
   height: 950
 };
 
-const mapStateToProp = (state, props) => {
+const mapStateToProp = state => {
   return {
     objects: state.appReducers.objects
   };

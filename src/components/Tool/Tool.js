@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class Tool extends React.Component {
-  state = {};
-
   onDragStart = e => {
     e.dataTransfer.setData(
       'tool',

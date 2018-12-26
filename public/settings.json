@@ -6,6 +6,7 @@
         "title": "Customer Title",
         "icon": "building",
         "type": "default",
+        "once": true,
         "properties": {
           "location": {
             "x": 10,
@@ -23,42 +24,87 @@
         "title": "Cutomer Address",
         "icon": "envelope",
         "type": "default",
-        "style": {
-          "width": 200,
-          "height": 70
+        "properties": {
+          "location": {
+            "x": 10,
+            "y": 10
+          },
+          "size": {
+            "w": 200,
+            "h": 20
+          },
+          "font": {
+
+          }
         }
       }, {
         "title": "Cutomer Phone Number",
         "icon": "phone",
         "type": "default",
-        "style": {
-          "width": 250,
-          "height": 20
+        "properties": {
+          "location": {
+            "x": 10,
+            "y": 10
+          },
+          "size": {
+            "w": 200,
+            "h": 20
+          },
+          "font": {
+
+          }
         }
       }, {
         "title": "Tax Office",
         "icon": "gavel",
         "type": "default",
-        "style": {
-          "width": 150,
-          "height": 20
+        "properties": {
+          "location": {
+            "x": 10,
+            "y": 10
+          },
+          "size": {
+            "w": 200,
+            "h": 20
+          },
+          "font": {
+
+          }
         }
       }, {
         "title": "Tax No",
         "icon": "gavel",
         "type": "default",
-        "style": {
-          "width": 150,
-          "height": 20
+        "properties": {
+          "location": {
+            "x": 10,
+            "y": 10
+          },
+          "size": {
+            "w": 200,
+            "h": 20
+          },
+          "font": {
+
+          }
         }
       },
       {
         "title": "Date of issue",
         "icon": "calendar-alt",
         "type": "default",
-        "style": {
-          "width": 150,
-          "height": 20
+        "properties": {
+          "location": {
+            "x": 10,
+            "y": 10
+          },
+          "size": {
+            "w": 200,
+            "h": 20
+          },
+          "font": {
+
+          }
         }
       }
     ]

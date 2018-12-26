@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 class PropertiesPanel extends Component {
   render() {
     return (
-      <div className="bg-grey-lightest shadow  p-5 w-1/3">
+      <div className="bg-grey-lightest shadow p-5 w-1/3">
         {this.props.properties &&
           Object.keys(this.props.properties).map(propertyName => {
             switch (propertyName) {

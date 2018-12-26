@@ -1,5 +1,4 @@
-Report Designer
-================
+# Report Designer
 
 You can checkout [DEMO](http://reporteditor.surge.sh/)
 
@@ -15,13 +14,13 @@ Fatura Tasarımcısı, React JS ile geliştirilmekte olan, fatura, irsaliye ve d
 
 Daha fazla detay için dokümantasyona göz atın.
 
-## Using 
+## Using
 
 ### Basic Setup
 
-**[EN]** 
+**[EN]**
 
-You can start to use basically. Firstly you should clone the repository, after that run `npm install` command to install dependencies. Lastly give the start with `npm start`.    
+You can start to use basically. Firstly you should clone the repository, after that run `npm install` command to install dependencies. Lastly give the start with `npm start`.
 
 Or you can download a release and open directly in your browser.
 
@@ -29,12 +28,26 @@ Or you can download a release and open directly in your browser.
 
 Bu repoyu bilgisayarınza indirin. Sonrasında `npm install` komutu ile bağımlılıkları yükleyin ve `npm start` komutu ile uygulamayı çalıştırın.
 
-Ya da direk release menüsünden bir versiyon indirerek doğrudan tarayıcınızda çalıştırabilirsiniz. 
+Ya da direk release menüsünden bir versiyon indirerek doğrudan tarayıcınızda çalıştırabilirsiniz.
 
+# Contributing
 
-## Contributing
-Please read [CONTRIBUTING.md](https://github.com/berkaygure/fatura-tasarimi/blob/master/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests.
+We love your input! We want to make contributing to this project as easy and transparent as possible, whether it's:
+
+- Reporting a bug
+- Discussing the current state of the code
+- Submitting a fix
+- Proposing new features
+- Becoming a maintainer
+
+## How to contributing
+
+1. Fork the repo and create your branch from `v2.0.0-dev`.
+2. If you've added code that should be tested, add tests.
+3. Ensure the test suite passes.
+4. Make sure your code lints.
+5. Issue that pull request!
 
 ## Credit
+
 - [Berkay Güre](https://github.com/berkaygure)
-w

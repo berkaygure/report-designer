@@ -7,10 +7,15 @@ import { makeElementActive, updateProperties } from '../../redux/actions';
 import PropTypes from 'prop-types';
 
 class Draggable extends Component {
-  state = { width: 200, height: 50, isActive: false };
+  state = { width: 0, height: 0, isActive: false };
 
   onSelectItem = () => {
-    this.props.makeElementActive(this.props.id);
+    if (
+      !this.props.activeElement ||
+      this.props.activeElement.id !== this.props.id
+    ) {
+      this.props.makeElementActive(this.props.id);
+    }
   };
 
   componentDidMount = () => {
@@ -25,10 +30,6 @@ class Draggable extends Component {
 
     const { element, size } = data;
     const { width, height } = size;
-    const widthChanged = width !== this.state.width;
-    const heightChanged = height !== this.state.height;
-
-    if (!widthChanged && !heightChanged) return;
 
     this.setState({ width, height }, () => {
       if (this.props.onResize) {
@@ -42,20 +43,26 @@ class Draggable extends Component {
   };
 
   onDrag = (event, data) => {
-    this.props.updateProperties('location', {
-      x: data.x,
-      y: data.y
-    });
+    if (
+      this.props.activeElement &&
+      this.props.activeElement.id === this.props.id
+    ) {
+      this.props.updateProperties('location', {
+        x: data.x,
+        y: data.y
+      });
+    }
   };
 
   render() {
     const { width, height } = this.state;
     const { id, activeElement, properties } = this.props;
+
     return (
       <ReactDraggable
         onStart={ () => this.onStartDrag() }
         bounds="parent"
-        onDrag={ (e, d) => this.onDrag(e, d) }
+        onDrag={ this.onDrag }
         defaultPosition={ {
           x: properties.location.x,
           y: properties.location.y
