@@ -2,6 +2,7 @@
   "name": "invoice-designer",
   "version": "2.0.0",
   "private": false,
+  "license": "MIT",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.4",
     "@fortawesome/free-brands-svg-icons": "^5.3.1",
