@@ -16,7 +16,7 @@ Fatura Tasarımcısı, React JS ile geliştirilmekte olan, fatura, irsaliye ve d
 
 Daha fazla detay için dokümantasyona göz atın.
 
-Eski sürüm için [buradan] (https://github.com/berkaygure/fatura-tasarimi/tree/v1.0)
+Eski sürüm için [buradan](https://github.com/berkaygure/fatura-tasarimi/tree/v1.0)
 
 ## Using
 
