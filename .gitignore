@@ -1,5 +1,9 @@
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
+#tailwindcss
+
+/src/css/tailwind.css
+
 # dependencies
 /node_modules
 
