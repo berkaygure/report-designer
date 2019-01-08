@@ -31,20 +31,15 @@
     "test": "yarn tailwind:css && react-scripts test --env=jsdom",
     "eject": "yarn tailwind:css && react-scripts eject",
     "lint": "eslint src/",
-    "lint:fix": "eslint src/ --fix"
-  },
-  "git": {
-    "scripts": {
-      "pre-push": "yarn build && surge --project ./build --domain reporteditor.surge.sh"
-    }
-  },
+    "lint:fix": "eslint src/ --fix",
+    "publish": "yarn build && surge --project ./build --domain reporteditor.surge.sh"
+},
   "devDependencies": {
     "babel-loader": "^8.0.4",
     "enzyme": "^3.6.0",
     "enzyme-adapter-react-16": "^1.5.0",
     "eslint-loader": "^2.1.1",
     "eslint-plugin-react": "^7.11.1",
-    "git-scripts": "0.2.1",
     "react-test-renderer": "^16.5.2",
     "surge": "latest",
     "tailwindcss": "^0.7.2"
