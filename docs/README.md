@@ -41,5 +41,3 @@ Or you can download a release and open directly in your browser.
 
 ## Who is use?
 
-- Filobus (SaaS Filo Management System)
-- Akaunting (Online Accounting Software)
