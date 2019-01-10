@@ -12,26 +12,25 @@
     padding-top: 1px;
     z-index: 8;
     top: -20px;
-
 }
 
 .ruler-h .tick {
     position: absolute;
     float: left;
-    border-left: 1px solid #b9b7b5;
+    border-left: 1px solid #ddd;
     width: 32px;
     height: 15px;
 
 }
 
 .ruler-h .tick:last-child {
-    border-right: 1px solid #b9b7b5;
+    border-right: 1px solid #ddd;
 }
 
 .rulerHNumber {
     position: absolute;
     top: 0;
-    left: 2px;
+    left: 10px;
 }
 
 .rulerHNumber:before {
@@ -70,20 +69,20 @@
 
 .ruler-v .tick {
     position: absolute;
-    border-top: 1px solid #b9b7b5;
+    border-top: 1px solid #ddd;
     width: 15px;
     padding-left: 3px;
     height: 32px;
 }
 
 .ruler-v .tick:last-child {
-    border-bottom: 1px solid #b9b7b5;
+    border-bottom: 1px solid #ddd;
 }
 
 .rulerVNumber {
     position: absolute;
-    top: 2px;
-    left: 0;
+    top: 10px;
+    left: 5px;
 }
 
 .rulerVNumber:before {
