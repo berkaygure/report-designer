@@ -6,7 +6,7 @@ class Default extends Component {
     const { content, id, properties } = this.props.context;
     return (
       <Draggable id={ id } properties={ properties }>
-        {content}
+        {content} j
       </Draggable>
     );
   }

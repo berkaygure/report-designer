@@ -15,10 +15,9 @@
     "react": "^16.5.2",
     "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "^16.5.2",
-    "react-draggable": "^3.0.5",
     "react-i18next": "^8.3.8",
     "react-redux": "^5.0.7",
-    "react-resizable": "^1.7.5",
+    "react-rnd": "^9.0.4",
     "react-router-dom": "^4.3.1",
     "react-scripts": "^2.0.0",
     "redux": "^4.0.0",
@@ -33,7 +32,7 @@
     "lint": "eslint src/",
     "lint:fix": "eslint src/ --fix",
     "publish": "yarn build && surge --project ./build --domain reporteditor.surge.sh"
-},
+  },
   "devDependencies": {
     "babel-loader": "^8.0.4",
     "enzyme": "^3.6.0",
