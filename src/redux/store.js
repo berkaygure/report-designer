@@ -4,7 +4,7 @@ import thunk from 'redux-thunk';
 
 const initialState = {};
 
-const middleware = [ thunk ];
+const middleware = [thunk];
 
 let allEnhancers;
 

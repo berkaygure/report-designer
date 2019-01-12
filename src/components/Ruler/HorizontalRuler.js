@@ -8,11 +8,7 @@ class HorizontalRuler extends Component {
     const HRulerTicks = [];
     for (let i = 0; i < Math.ceil(this.props.width / PER_PIXEL); i += 1) {
       HRulerTicks.push(
-        <div
-          key={ i }
-          className="tick"
-          style={ { width: PER_PIXEL, left: PER_PIXEL * i } }
-        >
+        <div key={i} className="tick" style={{ width: PER_PIXEL, left: PER_PIXEL * i }}>
           <div className="rulerHNumber">{i}</div>
         </div>
       );
@@ -28,10 +24,10 @@ class HorizontalRuler extends Component {
         {this.props.followerW && this.props.followerX ? (
           <div
             className="ruler-follower-h"
-            style={ {
+            style={{
               left: this.props.followerX,
               width: this.props.followerW
-            } }
+            }}
           />
         ) : null}
       </div>

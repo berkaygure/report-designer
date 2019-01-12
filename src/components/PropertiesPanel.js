@@ -12,7 +12,7 @@ class PropertiesPanel extends Component {
             switch (propertyName) {
               case 'location': {
                 const { x, y } = this.props.activeElement.properties.location;
-                return <Location x={ x } y={ y } />;
+                return <Location x={x} y={y} />;
               }
               default:
                 return null;

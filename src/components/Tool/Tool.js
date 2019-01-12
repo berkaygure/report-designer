@@ -16,12 +16,11 @@ class Tool extends React.Component {
 
   render = () => (
     <div
-      onDragStart={ this.onDragStart }
+      onDragStart={this.onDragStart}
       className="pl-5 hover:bg-grey-lighter p-2 bg-grey-lightest w-full text-grey-dark border-b border-grey-light text-sm outline-none"
       draggable
     >
-      <FontAwesomeIcon className="text-grey-dark mr-2" icon={ this.props.icon } />{' '}
-      {this.props.title}
+      <FontAwesomeIcon className="text-grey-dark mr-2" icon={this.props.icon} /> {this.props.title}
     </div>
   );
 }

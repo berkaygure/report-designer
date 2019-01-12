@@ -1,9 +1,4 @@
-import {
-  INITIALIZE_APP,
-  ADD_TO_SCENE,
-  MAKE_ELEMENT_ACTIVE,
-  UPDATE_PROPERTIES
-} from './types';
+import { INITIALIZE_APP, ADD_TO_SCENE, MAKE_ELEMENT_ACTIVE, UPDATE_PROPERTIES } from './types';
 import axios from 'axios';
 
 /**

@@ -22,13 +22,13 @@ export default (state = INITIAL_STATE, action) => {
     case ADD_TO_SCENE:
       return {
         ...state,
-        objects: [ ...state.objects, { ...action.payload } ]
+        objects: [...state.objects, { ...action.payload }]
       };
 
     case MAKE_ELEMENT_ACTIVE:
       return {
         ...state,
-        activeElement: _.find(state.objects, [ 'id', action.payload ])
+        activeElement: _.find(state.objects, ['id', action.payload])
       };
     case UPDATE_PROPERTIES:
       return {

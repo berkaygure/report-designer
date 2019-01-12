@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 import Tool from '../Tool/Tool';
 
 class ToolGroup extends Component {
-
   state = {
     collapse: false
   };
@@ -24,15 +23,15 @@ class ToolGroup extends Component {
     <div>
       <div className="rounded-lg border border-grey-light bg-white mb-5 w-full">
         <h4
-          onClick={ () => this.toggle() }
+          onClick={() => this.toggle()}
           className="m-1 collapse-handler p-3 font-medium  bg-white"
         >
           {this.props.title}
         </h4>
         <ReactCSSTransitionGroup
           transitionName="fade"
-          transitionEnterTimeout={ 500 }
-          transitionLeaveTimeout={ 300 }
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={300}
         >
           {this.state.collapse === false ? null : (
             <div className="border-t border-grey-light ">
@@ -44,11 +43,11 @@ class ToolGroup extends Component {
               {this.props.tools &&
                 this.props.tools.map((tool, i) => (
                   <Tool
-                    key={ i }
-                    icon={ tool.icon }
-                    properties={ tool.properties }
-                    type={ tool.type }
-                    title={ tool.title }
+                    key={i}
+                    icon={tool.icon}
+                    properties={tool.properties}
+                    type={tool.type}
+                    title={tool.title}
                   />
                 ))}
             </div>

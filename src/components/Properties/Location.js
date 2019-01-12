@@ -39,9 +39,9 @@ class Location extends Component {
               <td>
                 <input
                   type="text"
-                  value={ this.state.x }
+                  value={this.state.x}
                   name="x"
-                  onChange={ this.handleChange }
+                  onChange={this.handleChange}
                   className="p-1 text-center bg-grey-light rounded w-1/2 outline-none"
                 />
               </td>
@@ -51,9 +51,9 @@ class Location extends Component {
               <td>
                 <input
                   type="text"
-                  value={ this.state.y }
+                  value={this.state.y}
                   name="y"
-                  onChange={ this.handleChange }
+                  onChange={this.handleChange}
                   className="p-1 text-center bg-grey-light rounded w-1/2 outline-none"
                 />
               </td>

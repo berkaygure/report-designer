@@ -36,9 +36,9 @@ class Editor extends Component {
   render() {
     return (
       <div
-        onClickCapture={ this.onSelectEditor }
-        onDragOver={ e => e.preventDefault() }
-        onDrop={ e => this.onDrop(e) }
+        onClickCapture={this.onSelectEditor}
+        onDragOver={e => e.preventDefault()}
+        onDrop={e => this.onDrop(e)}
         className="editor-wrapper"
       >
         {this.rulerX()}
@@ -48,7 +48,7 @@ class Editor extends Component {
             this.props.objects.map(object => {
               switch (object.type) {
                 case 'default':
-                  return <Default context={ object } key={ object.id } />;
+                  return <Default context={object} key={object.id} />;
                 default:
                   return null;
               }
@@ -64,7 +64,7 @@ class Editor extends Component {
   rulerX() {
     return this.props.showRuler === true ||
       this.props.showRuler.toString().toLocaleLowerCase() === 'x' ? (
-      <HorizontalRuler width={ this.props.width } />
+      <HorizontalRuler width={this.props.width} />
     ) : null;
   }
 
@@ -74,7 +74,7 @@ class Editor extends Component {
   rulerY() {
     return this.props.showRuler === true ||
       this.props.showRuler.toString().toLocaleLowerCase() === 'y' ? (
-      <VerticalRuler height={ this.props.height } />
+      <VerticalRuler height={this.props.height} />
     ) : null;
   }
 }

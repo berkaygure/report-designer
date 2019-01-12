@@ -33,23 +33,19 @@ class App extends React.Component {
           {this.props.tools &&
             this.props.tools.map((tool, i) => (
               <ToolGroup
-                key={ i }
-                title={ tool.title }
-                collapse={ true }
-                tools={ tool.items }
-                description={ tool.description }
+                key={i}
+                title={tool.title}
+                collapse={true}
+                tools={tool.items}
+                description={tool.description}
               />
             ))}
         </div>
         <div className="bg-grey-lightest  p-3 w-full overflow-y-scroll">
-          <Editor width={ 672 } height={ 950 } />
+          <Editor width={672} height={950} />
         </div>
         <PropertiesPanel
-          properties={
-            this.props.activeElement
-              ? this.props.activeElement.properties
-              : null
-          }
+          properties={this.props.activeElement ? this.props.activeElement.properties : null}
         />
       </div>
       <footer className="w-full text-center border-t border-grey-lighter p-4 bg-grey-lightest text-sm">
