@@ -1,6 +1,6 @@
 {
   "name": "invoice-designer",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "private": false,
   "license": "MIT",
   "dependencies": {
@@ -37,8 +37,14 @@
     "babel-loader": "^8.0.4",
     "enzyme": "^3.6.0",
     "enzyme-adapter-react-16": "^1.5.0",
+    "eslint": "^5.12.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^3.3.0",
     "eslint-loader": "^2.1.1",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "^7.11.1",
+    "prettier": "^1.15.3",
     "react-test-renderer": "^16.5.2",
     "surge": "latest",
     "tailwindcss": "^0.7.2"
