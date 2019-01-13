@@ -60,15 +60,12 @@ class Location extends Component {
 }
 
 Location.propTypes = {
-  activeElement: PropTypes.object,
   x: PropTypes.number,
   y: PropTypes.number
 };
 
 const mapStateToProps = state => {
-  return {
-    activeElement: state.appReducers.activeElement
-  };
+  return {};
 };
 
 export default withNamespaces()(

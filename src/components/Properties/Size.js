@@ -60,15 +60,12 @@ class Size extends Component {
 }
 
 Location.propTypes = {
-  activeElement: PropTypes.object,
   w: PropTypes.number,
   h: PropTypes.number
 };
 
 const mapStateToProps = state => {
-  return {
-    activeElement: state.appReducers.activeElement
-  };
+  return {};
 };
 
 export default withNamespaces()(

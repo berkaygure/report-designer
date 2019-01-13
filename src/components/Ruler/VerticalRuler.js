@@ -21,7 +21,7 @@ class VerticalRuler extends Component {
     return (
       <div className="ruler ruler-v">
         {this.renderTicks()}
-        {this.props.followerY && this.props.followerH ? (
+        {this.props.followerY !== null && this.props.followerH !== null ? (
           <div
             className="ruler-follower-v"
             style={{
