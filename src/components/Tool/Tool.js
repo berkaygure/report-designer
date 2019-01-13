@@ -3,6 +3,16 @@ import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class Tool extends React.Component {
+  static propTypes = {
+    title: PropTypes.string.isRequired,
+    icon: PropTypes.string.isRequired,
+    properties: PropTypes.object.isRequired,
+    type: PropTypes.string.isRequired
+  };
+
+  /**
+   * Adds json data about tool to dataTransfer object.
+   */
   onDragStart = e => {
     e.dataTransfer.setData(
       'tool',
@@ -24,12 +34,5 @@ class Tool extends React.Component {
     </div>
   );
 }
-
-Tool.propTypes = {
-  title: PropTypes.string.isRequired,
-  icon: PropTypes.string.isRequired,
-  properties: PropTypes.object.isRequired,
-  type: PropTypes.string.isRequired
-};
 
 export default Tool;

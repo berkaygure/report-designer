@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import { Rnd } from 'react-rnd';
-import './Draggable.css';
 import { connect } from 'react-redux';
-import { makeElementActive, updateProperties } from '../../redux/actions';
 import PropTypes from 'prop-types';
+import { Rnd } from 'react-rnd';
+
+import { makeElementActive, changeLocation } from '../../redux/actions';
+import DraggableRemoveHandler from './DraggableRemoveHandler';
+import './Draggable.css';
 
 const resizeHandlerClasses = {
   right: 'leftAndRight',
@@ -17,75 +19,88 @@ const resizeHandlerClasses = {
 };
 
 class Draggable extends Component {
-  state = {
-    width: 0,
-    height: 0
+  static propTypes = {
+    id: PropTypes.string,
+    activeElement: PropTypes.object,
+    style: PropTypes.object,
+    properties: PropTypes.object,
+    onResize: PropTypes.func,
+    makeElementActive: PropTypes.func,
+    updateProperties: PropTypes.func
   };
 
+  /**
+   *  When element clicked.
+   */
   onSelectItem = () => {
-    this.props.makeElementActive(this.props.id);
+    this.makeActiveIfIsNot();
   };
 
-  componentDidMount = () => {
-    this.setState({
-      width: this.props.properties.size.w,
-      height: this.props.properties.size.h
-    });
-  };
-
-  onStartDrag = () => {
-    this.props.makeElementActive(this.props.id);
-  };
-
-  onResizeStart = () => {
-    this.props.makeElementActive(this.props.id);
-  };
-
+  /**
+   * While element resizing on page.
+   */
   onResize = (e, direction, ref, delta, position) => {
-    this.setState({
-      width: ref.style.width,
-      height: ref.style.height
+    this.makeActiveIfIsNot();
+
+    this.props.changeLocation({
+      x: position.x,
+      y: position.y
     });
   };
 
+  /**
+   * While element dragging on page.
+   */
   onDrag = (event, data) => {
-    if (this.isElementSelected()) {
-    }
+    this.makeActiveIfIsNot();
+
+    this.props.changeLocation({
+      x: data.x,
+      y: data.y
+    });
   };
 
+  /**
+   * If element not selected yet make selected.
+   */
+  makeActiveIfIsNot() {
+    if (!this.isElementSelected()) {
+      this.props.makeElementActive(this.props.id);
+    }
+  }
+
+  /**
+   *  Am i selected?
+   */
   isElementSelected = () => {
-    return this.props.activeElement && this.props.activeElement.id === this.props.id;
+    return this.props.activeElementId === this.props.id;
   };
 
   render() {
-    const { width, height } = this.state;
-    const { isActive } = this.props;
+    const { location, size } = this.props.properties;
+
+    if (this.props.activeElement) {
+      const { location, size } = this.props.activeElement.properties;
+    }
 
     return (
       <Rnd
         bounds="parent"
-        size={{
-          width,
-          height
-        }}
-        onDrag={(e, d) => this.onDrag(e, d)}
-        onResizeStart={() => this.onResizeStart()}
-        onResize={(e, direction, ref, delta, position) =>
-          this.onResize(e, direction, ref, delta, position)
-        }
+        size={size}
+        position={location}
+        onClick={this.onSelectItem.bind(this)}
+        onDragStart={this.onSelectItem}
+        onResizeStart={this.onSelectItem}
+        onDrag={this.onDrag.bind(this)}
+        onResize={this.onResize.bind(this)}
         resizeHandleClasses={resizeHandlerClasses}
-        resizeHandleWrapperClass={`resizeHandlerWrapper ${isActive ? 'active' : ''}`}
+        className={`draggable ${this.isElementSelected() ? 'active' : ''}`}
+        resizeHandleWrapperClass={`resizeHandlerWrapper ${
+          this.isElementSelected() ? 'active' : ''
+        }`}
       >
-        <div
-          onClick={() => this.onSelectItem()}
-          style={{
-            width: width,
-            height: height
-          }}
-          className={`draggable ${isActive ? 'active' : ''}`}
-        >
-          {this.props.children}
-        </div>
+        {this.props.children}
+        {this.isElementSelected() ? <DraggableRemoveHandler /> : null}
       </Rnd>
     );
   }
@@ -95,25 +110,14 @@ const mapStateToProp = state => {
   return {
     ...state,
     activeElement: state.appReducers.activeElement,
-    isActive: state.appReducers.activeElement ? true : false
+    activeElementId: state.appReducers.activeElement ? state.appReducers.activeElement.id : null
   };
-};
-
-Draggable.propTypes = {
-  children: PropTypes.object,
-  id: PropTypes.string,
-  activeElement: PropTypes.object,
-  style: PropTypes.object,
-  properties: PropTypes.object,
-  onResize: PropTypes.func,
-  makeElementActive: PropTypes.func,
-  updateProperties: PropTypes.func
 };
 
 export default connect(
   mapStateToProp,
   {
     makeElementActive,
-    updateProperties
+    changeLocation
   }
 )(Draggable);

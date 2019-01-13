@@ -7,7 +7,8 @@ import {
   faBuilding,
   faEnvelope,
   faPhone,
-  faCalendarAlt
+  faCalendarAlt,
+  faTrash
 } from '@fortawesome/free-solid-svg-icons';
 import { connect } from 'react-redux';
 import { loadSettings } from './redux/actions';
@@ -19,6 +20,7 @@ library.add(faBuilding);
 library.add(faEnvelope);
 library.add(faPhone);
 library.add(faCalendarAlt);
+library.add(faTrash);
 
 class App extends React.Component {
   componentDidMount = () => {
