@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { INITIALIZE_APP, ADD_TO_SCENE, MAKE_ELEMENT_ACTIVE, CHANGE_LOCATION } from './types';
+import { INITIALIZE_APP, ADD_TO_SCENE, MAKE_ELEMENT_ACTIVE, CHANGE_PROPERTIES } from './types';
 
 /**
  * Apply loaded settings to application
@@ -49,7 +49,7 @@ export const makeElementActive = elementId => ({
  * @param {string} elementId
  * @param {object} props
  */
-export const changeLocation = location => ({
-  type: CHANGE_LOCATION,
+export const changeProperties = location => ({
+  type: CHANGE_PROPERTIES,
   payload: location
 });

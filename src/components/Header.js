@@ -1,10 +1,20 @@
 import React from 'react';
 
+const logo = require('../assets/logo.png');
+
 const Header = () => (
   <header>
     <nav className="flex items-center justify-between flex-wrap bg-blue-dark p-3 shadow">
       <div className="flex items-center flex-no-shrink  text-white mr-6">
-        <span className="font-semibold text-xl tracking-tight">Report Editor</span>
+        <span className="font-semibold flex align-center text-xl tracking-tight">
+          <img
+            style={{ width: 40, height: 45 }}
+            className="align-top"
+            srcSet={logo}
+            alt="Report Editor"
+          />
+          <span className="ml-2 self-center"> Report Editor</span>
+        </span>
       </div>
       <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
         <div className="text-sm lg:flex-grow">

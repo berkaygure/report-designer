@@ -79,7 +79,11 @@ class Editor extends Component {
   rulerX() {
     return this.props.showRuler === true ||
       this.props.showRuler.toString().toLocaleLowerCase() === 'x' ? (
-      <HorizontalRuler width={this.props.width} />
+      <HorizontalRuler
+        followerX={this.props.activeElement ? this.props.activeElement.properties.location.x : null}
+        followerW={this.props.activeElement ? this.props.activeElement.properties.size.width : null}
+        width={this.props.width}
+      />
     ) : null;
   }
 
@@ -89,14 +93,21 @@ class Editor extends Component {
   rulerY() {
     return this.props.showRuler === true ||
       this.props.showRuler.toString().toLocaleLowerCase() === 'y' ? (
-      <VerticalRuler height={this.props.height} />
+      <VerticalRuler
+        followerH={
+          this.props.activeElement ? this.props.activeElement.properties.size.height : null
+        }
+        followerY={this.props.activeElement ? this.props.activeElement.properties.location.y : null}
+        height={this.props.height}
+      />
     ) : null;
   }
 }
 
 const mapStateToProp = state => {
   return {
-    objects: state.appReducers.objects
+    objects: state.appReducers.objects,
+    activeElement: state.appReducers.activeElement
   };
 };
 

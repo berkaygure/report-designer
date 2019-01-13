@@ -1,5 +1,8 @@
 {
-    "location.title": "Location",
-    "location.left": "Left",
-    "location.top": "Top"
+  "location.title": "Location",
+  "location.left": "Left",
+  "location.top": "Top",
+  "size.title": "Size",
+  "size.width": "Width",
+  "size.height": "Height"
 }

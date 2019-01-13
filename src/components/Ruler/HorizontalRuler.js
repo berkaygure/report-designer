@@ -21,7 +21,7 @@ class HorizontalRuler extends Component {
     return (
       <div className="ruler ruler-h">
         {this.renderTicks()}
-        {this.props.followerW && this.props.followerX ? (
+        {this.props.followerW !== null && this.props.followerX !== null ? (
           <div
             className="ruler-follower-h"
             style={{

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Rnd } from 'react-rnd';
 
-import { makeElementActive, changeLocation } from '../../redux/actions';
+import { makeElementActive, changeProperties } from '../../redux/actions';
 import DraggableRemoveHandler from './DraggableRemoveHandler';
 import './Draggable.css';
 
@@ -26,7 +26,7 @@ class Draggable extends Component {
     properties: PropTypes.object,
     onResize: PropTypes.func,
     makeElementActive: PropTypes.func,
-    updateProperties: PropTypes.func
+    changeProperties: PropTypes.func
   };
 
   /**
@@ -41,10 +41,16 @@ class Draggable extends Component {
    */
   onResize = (e, direction, ref, delta, position) => {
     this.makeActiveIfIsNot();
+    this.props.changeProperties({
+      location: {
+        x: position.x,
+        y: position.y
+      },
 
-    this.props.changeLocation({
-      x: position.x,
-      y: position.y
+      size: {
+        width: ref.clientWidth,
+        height: ref.clientHeight
+      }
     });
   };
 
@@ -54,9 +60,11 @@ class Draggable extends Component {
   onDrag = (event, data) => {
     this.makeActiveIfIsNot();
 
-    this.props.changeLocation({
-      x: data.x,
-      y: data.y
+    this.props.changeProperties({
+      location: {
+        x: data.x,
+        y: data.y
+      }
     });
   };
 
@@ -118,6 +126,6 @@ export default connect(
   mapStateToProp,
   {
     makeElementActive,
-    changeLocation
+    changeProperties
   }
 )(Draggable);

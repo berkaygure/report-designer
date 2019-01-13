@@ -31,7 +31,7 @@
     "eject": "yarn tailwind:css && react-scripts eject",
     "lint": "eslint src/",
     "lint:fix": "eslint src/ --fix",
-    "publish": "yarn build && surge --project ./build --domain reporteditor.surge.sh"
+    "deploy": "yarn build && surge --project ./build --domain reporteditor.surge.sh"
   },
   "devDependencies": {
     "babel-loader": "^8.0.4",
