@@ -8,11 +8,7 @@ class VerticalRuler extends Component {
     const VRulerTicks = [];
     for (let i = 0; i < Math.ceil(this.props.height / PER_PIXEL); i++) {
       VRulerTicks.push(
-        <div
-          key={ i }
-          className="tick"
-          style={ { height: PER_PIXEL, top: PER_PIXEL * i } }
-        >
+        <div key={i} className="tick" style={{ height: PER_PIXEL, top: PER_PIXEL * i }}>
           <div className="rulerVNumber">{i}</div>
         </div>
       );
@@ -28,10 +24,10 @@ class VerticalRuler extends Component {
         {this.props.followerY && this.props.followerH ? (
           <div
             className="ruler-follower-v"
-            style={ {
+            style={{
               top: this.props.followerY,
               height: this.props.followerH
-            } }
+            }}
           />
         ) : null}
       </div>

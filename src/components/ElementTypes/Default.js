@@ -1,15 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Draggable from '../Draggable/Draggable';
 
-class Default extends Component {
-  render() {
-    const { content, id, properties } = this.props.context;
-    return (
-      <Draggable id={ id } properties={ properties }>
-        {content} j
-      </Draggable>
-    );
-  }
-}
+const Default = props => {
+  const { content, properties } = props.context;
+  return (
+    <Draggable id={props.id} properties={properties}>
+      {content}
+    </Draggable>
+  );
+};
 
 export default Default;

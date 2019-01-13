@@ -1,34 +1,23 @@
-import {
-  INITIALIZE_APP,
-  ADD_TO_SCENE,
-  MAKE_ELEMENT_ACTIVE,
-  UPDATE_PROPERTIES
-} from './types';
 import axios from 'axios';
+import { INITIALIZE_APP, ADD_TO_SCENE, MAKE_ELEMENT_ACTIVE, CHANGE_LOCATION } from './types';
 
 /**
- * Applys loaded settings to application
+ * Apply loaded settings to application
  *
  * @param {object} settings
  */
-export const initializeApp = settings => {
-  return {
-    type: INITIALIZE_APP,
-    payload: settings
-  };
-};
+export const initializeApp = settings => ({
+  type: INITIALIZE_APP,
+  payload: settings
+});
 
 /**
- * Loads settins from a JSON
+ * Loads settings from a JSON
  */
-export const loadSettings = () => {
-  return async dispatch => {
-    try {
-      const res = await axios.get('./settings.json');
-      const data = await res.data;
-      dispatch(initializeApp(data));
-    } catch (e) {}
-  };
+export const loadSettings = () => async dispatch => {
+  const res = await axios.get('./settings.json');
+  const data = await res.data;
+  dispatch(initializeApp(data));
 };
 
 /**
@@ -36,37 +25,31 @@ export const loadSettings = () => {
  *
  * @param {object} object
  */
-export const addToScene = object => {
-  return {
-    type: ADD_TO_SCENE,
-    payload: object
-  };
-};
+export const addToScene = (id, object) => ({
+  type: ADD_TO_SCENE,
+  payload: {
+    id,
+    object
+  }
+});
 
 /**
  * Makes active to clicked element and disable others.
  *
  * @param {string} elementId
  */
-export const makeElementActive = elementId => {
-  return {
-    type: MAKE_ELEMENT_ACTIVE,
-    payload: elementId
-  };
-};
+export const makeElementActive = elementId => ({
+  type: MAKE_ELEMENT_ACTIVE,
+  payload: elementId
+});
 
 /**
- * Updates elements properties.
+ * Updates selected elements location.
  *
  * @param {string} elementId
  * @param {object} props
  */
-export const updateProperties = (propertyName, props) => {
-  return {
-    type: UPDATE_PROPERTIES,
-    payload: {
-      propertyName: propertyName,
-      properties: props
-    }
-  };
-};
+export const changeLocation = location => ({
+  type: CHANGE_LOCATION,
+  payload: location
+});

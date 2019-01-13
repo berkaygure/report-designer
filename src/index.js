@@ -9,7 +9,7 @@ import store from './redux/store';
 
 // eslint-disable-next-line no-undef
 ReactDOM.render(
-  <Provider store={ store }>
+  <Provider store={store}>
     <App />
   </Provider>,
   document.getElementById('root')

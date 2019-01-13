@@ -2,13 +2,13 @@ import {
   INITIALIZE_APP,
   ADD_TO_SCENE,
   MAKE_ELEMENT_ACTIVE,
-  UPDATE_PROPERTIES
+  CHANGE_LOCATION
 } from '../actions/types';
-import _ from 'lodash';
 
 const INITIAL_STATE = {
   tools: [],
-  objects: []
+  objects: {},
+  activeElement: null
 };
 
 export default (state = INITIAL_STATE, action) => {
@@ -22,25 +22,56 @@ export default (state = INITIAL_STATE, action) => {
     case ADD_TO_SCENE:
       return {
         ...state,
-        objects: [ ...state.objects, { ...action.payload } ]
+        objects: { ...state.objects, [action.payload.id]: { ...action.payload.object } }
       };
 
-    case MAKE_ELEMENT_ACTIVE:
+    case MAKE_ELEMENT_ACTIVE: {
+      const activeElement = state.objects[action.payload];
+
+      if (!activeElement) {
+        return {
+          ...state,
+          activeElement: null
+        };
+      }
+
+      activeElement.id = action.payload;
+
       return {
         ...state,
-        activeElement: _.find(state.objects, [ 'id', action.payload ])
+        activeElement
       };
-    case UPDATE_PROPERTIES:
-      return {
-        ...state,
-        activeElement: {
-          ...state.activeElement,
-          properties: {
-            ...state.activeElement.properties,
-            [action.payload.propertyName]: action.payload.properties
-          }
+    }
+    case CHANGE_LOCATION: {
+      if (!state.activeElement) return state;
+
+      const activeElement = state.objects[state.activeElement.id];
+
+      if (!activeElement) return state;
+
+      const newActiveElement = {
+        ...activeElement,
+        properties: {
+          ...activeElement.properties,
+          location: action.payload
         }
       };
+
+      return {
+        ...state,
+        objects: {
+          ...state.objects,
+          [state.activeElement.id]: {
+            ...newActiveElement
+          }
+        },
+        activeElement: {
+          id: state.activeElement.id,
+          ...newActiveElement
+        }
+      };
+    }
+
     default:
       return state;
   }

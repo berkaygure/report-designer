@@ -1,31 +1,39 @@
 .draggable {
-    position: absolute;
-    border: thin solid #ccc;
-    display: inline-block;
-    font-size: 12px;
-    cursor: move;
+  position: absolute;
+  border: thin solid #ccc;
+  display: inline-block;
+  font-size: 12px;
+  cursor: move;
 }
 
 .draggable.active {
-    border: none;
-
+  border: none;
 }
 
 .resizeHandlerWrapper.active .handler {
-    background-color: transparent;
-    border: 1px dashed #6483ee;
-    width: 10px  !important;
-    height: 10px  !important;
+  background-color: transparent;
+  border: 1px dashed #6483ee;
+  width: 10px !important;
+  height: 10px !important;
 }
 
 .resizeHandlerWrapper.active .leftAndRight {
-    background-color: #6483ee;
-    width:  2px !important;
-
+  background-color: #6483ee;
+  width: 2px !important;
 }
 
 .resizeHandlerWrapper.active .topAndBottom {
-    background-color: #6483ee;
-    height:  2px !important;
+  background-color: #6483ee;
+  height: 2px !important;
+}
 
+.removeElement {
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+.removeElement button {
+  outline: none;
 }
