@@ -2,7 +2,7 @@ import {
   INITIALIZE_APP,
   ADD_TO_SCENE,
   MAKE_ELEMENT_ACTIVE,
-  CHANGE_LOCATION
+  CHANGE_PROPERTIES
 } from '../actions/types';
 
 const INITIAL_STATE = {
@@ -42,7 +42,7 @@ export default (state = INITIAL_STATE, action) => {
         activeElement
       };
     }
-    case CHANGE_LOCATION: {
+    case CHANGE_PROPERTIES: {
       if (!state.activeElement) return state;
 
       const activeElement = state.objects[state.activeElement.id];
@@ -53,7 +53,7 @@ export default (state = INITIAL_STATE, action) => {
         ...activeElement,
         properties: {
           ...activeElement.properties,
-          location: action.payload
+          ...action.payload
         }
       };
 
