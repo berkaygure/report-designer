@@ -10,6 +10,7 @@
           "type": "default",
           "once": true,
           "properties": {
+            "alignment": "",
             "location": {
               "x": 0,
               "y": 0

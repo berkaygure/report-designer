@@ -4,5 +4,6 @@
   "location.top": "Top",
   "size.title": "Size",
   "size.width": "Width",
-  "size.height": "Height"
+  "size.height": "Height",
+  "alignment.title": "Alignment"
 }

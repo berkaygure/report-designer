@@ -103,6 +103,7 @@ class Draggable extends Component {
         onResize={this.onResize.bind(this)}
         resizeHandleClasses={resizeHandlerClasses}
         className={`draggable ${this.isElementSelected() ? 'active' : ''}`}
+        style={{ ...this.props.style }}
         resizeHandleWrapperClass={`resizeHandlerWrapper ${
           this.isElementSelected() ? 'active' : ''
         }`}
