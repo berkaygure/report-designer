@@ -8,7 +8,10 @@ import {
   faEnvelope,
   faPhone,
   faCalendarAlt,
-  faTrash
+  faTrash,
+  faAlignLeft,
+  faAlignCenter,
+  faAlignRight
 } from '@fortawesome/free-solid-svg-icons';
 import { connect } from 'react-redux';
 import { loadSettings } from './redux/actions';
@@ -21,6 +24,9 @@ library.add(faEnvelope);
 library.add(faPhone);
 library.add(faCalendarAlt);
 library.add(faTrash);
+library.add(faAlignLeft);
+library.add(faAlignCenter);
+library.add(faAlignRight);
 
 class App extends React.Component {
   componentDidMount = () => {

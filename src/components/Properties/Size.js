@@ -4,6 +4,11 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { convertToCm, convertToPx } from '../../helpers/Dimensions';
 import { changeProperties } from '../../redux/actions';
+import Property from '../Property/Property';
+import PropertyHeader from '../Property/PropertyHeader';
+import PropertyBody from '../Property/PropertyBody';
+import PropertyTable from '../Property/PropertyTable';
+import PropertyTableRow from '../Property/PropertyTableRow';
 
 class Size extends Component {
   handleChange = event => {
@@ -20,41 +25,23 @@ class Size extends Component {
 
   render() {
     return (
-      <div className="rounded-lg border border-grey-light bg-white mb-5 w-full">
-        <h4 className="m-1 collapse-handler p-3 font-medium  bg-white">
-          {this.props.t('size.title')}
-        </h4>
-        <div className="pl-5 p-2 bg-grey-lightest w-full text-grey-dark border-b border-grey-light text-sm outline-none">
-          <table className="w-full table-auto table-fixed text-center text-sm">
-            <tbody>
-              <tr>
-                <td> {this.props.t('size.width')} </td>
-                <td>
-                  <input
-                    type="text"
-                    value={convertToCm(this.props.w)}
-                    name="w"
-                    onChange={this.handleChange}
-                    className="p-1 text-center bg-grey-light rounded w-1/2 outline-none"
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td> {this.props.t('size.height')} </td>
-                <td>
-                  <input
-                    type="text"
-                    value={convertToCm(this.props.h)}
-                    name="h"
-                    onChange={this.handleChange}
-                    className="p-1 text-center bg-grey-light rounded w-1/2 outline-none"
-                  />
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
+      <Property>
+        <PropertyHeader title={this.props.t('size.title')} />
+        <PropertyBody>
+          <PropertyTable>
+            <PropertyTableRow
+              text={this.props.t('size.width')}
+              value={convertToCm(this.props.w)}
+              change={this.handleChange}
+            />
+            <PropertyTableRow
+              text={this.props.t('size.width')}
+              value={convertToCm(this.props.w)}
+              change={this.handleChange}
+            />
+          </PropertyTable>
+        </PropertyBody>
+      </Property>
     );
   }
 }
