@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Rnd } from 'react-rnd';
 
-import { makeElementActive, changeProperties } from '../../redux/actions';
+import { makeElementActive, changeProperties, dropElement } from '../../redux/actions';
 import DraggableRemoveHandler from './DraggableRemoveHandler';
 import './Draggable.css';
 
@@ -84,12 +84,12 @@ class Draggable extends Component {
     return this.props.activeElementId === this.props.id;
   };
 
-  render() {
-    const { location, size } = this.props.properties;
+  dropElement = () => this.props.dropElement(this.props.id);
 
-    if (this.props.activeElement) {
-      const { location, size } = this.props.activeElement.properties;
-    }
+  render() {
+    const { location, size } = this.isElementSelected()
+      ? this.props.activeElement.properties
+      : this.props.properties;
 
     return (
       <Rnd
@@ -108,7 +108,9 @@ class Draggable extends Component {
         }`}
       >
         {this.props.children}
-        {this.isElementSelected() ? <DraggableRemoveHandler /> : null}
+        {this.isElementSelected() ? (
+          <DraggableRemoveHandler click={this.dropElement.bind(this)} />
+        ) : null}
       </Rnd>
     );
   }
@@ -126,6 +128,7 @@ export default connect(
   mapStateToProp,
   {
     makeElementActive,
-    changeProperties
+    changeProperties,
+    dropElement
   }
 )(Draggable);

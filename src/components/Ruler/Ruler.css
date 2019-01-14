@@ -1,108 +1,105 @@
 .ruler {
-    position: absolute;
-    font-size: 9px;
-    line-height: 8px;
-    z-index: 10;
+  position: absolute;
+  font-size: 9px;
+  line-height: 8px;
+  z-index: 10;
 }
 
 /* Horizontal Ruler */
 
 .ruler.ruler-h {
-    height: 15px;
-    padding-top: 1px;
-    z-index: 8;
-    top: -20px;
+  height: 15px;
+  padding-top: 1px;
+  z-index: 8;
+  top: -20px;
 }
 
 .ruler-h .tick {
-    position: absolute;
-    float: left;
-    border-left: 1px solid #ddd;
-    width: 32px;
-    height: 15px;
-
+  position: absolute;
+  float: left;
+  border-left: 1px solid #ddd;
+  width: 32px;
+  height: 15px;
 }
 
 .ruler-h .tick:last-child {
-    border-right: 1px solid #ddd;
+  border-right: 1px solid #ddd;
 }
 
 .rulerHNumber {
-    position: absolute;
-    top: 0;
-    left: 10px;
+  position: absolute;
+  top: 0;
+  left: 10px;
 }
 
 .rulerHNumber:before {
-    display: table;
-    content: '';
+  display: table;
+  content: '';
 }
 
 .rulerHNumber:after {
-    clear: both;
+  clear: both;
 }
 
 .ruler-follower-h {
-    position: absolute;
-    width: 1px;
-    height: 20px;
-    left: 0;
-    top: 0;
-    background-color: rgba(51, 103, 153, 0.45);
-    border-right: 1px solid #336699;
-    border-left: 1px solid #336699;
-    z-index: 1;
-    display: block;
-
+  position: absolute;
+  width: 1px;
+  height: 20px;
+  left: 0;
+  top: 0;
+  background-color: rgba(51, 103, 153, 0.45);
+  border-right: 1px solid #336699;
+  border-left: 1px solid #336699;
+  z-index: 1;
+  display: block;
 }
 
 /* Vertical Ruler */
 
 .ruler.ruler-v {
-    width: 15px;
-    padding-top: 1px;
-    z-index: 8;
-    top: 0;
-    margin-left: -20px;
+  width: 15px;
+  padding-top: 1px;
+  z-index: 8;
+  top: 0;
+  margin-left: -20px;
 }
 
-
 .ruler-v .tick {
-    position: absolute;
-    border-top: 1px solid #ddd;
-    width: 15px;
-    padding-left: 3px;
-    height: 32px;
+  position: absolute;
+  border-top: 1px solid #ddd;
+  width: 15px;
+  padding-left: 3px;
+  height: 32px;
 }
 
 .ruler-v .tick:last-child {
-    border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
 }
 
 .rulerVNumber {
-    position: absolute;
-    top: 10px;
-    left: 5px;
+  position: absolute;
+  top: 10px;
+  left: 5px;
 }
 
 .rulerVNumber:before {
-    display: table;
-    content: '';
+  display: table;
+  content: '';
 }
 
 .rulerVNumber:after {
-    clear: both;
+  clear: both;
 }
 
 .ruler-follower-v {
-    position: absolute;
-    width: 20px;
-    height: 1px;
-    left: 0;
-    top: 0;
-    background-color: rgba(51, 103, 153, 0.45);
-    border-top: 1px solid #336699;
-    border-bottom: 1px solid #336699;
-    z-index: 1;
-    display: block;
+  position: absolute;
+  width: 20px;
+  height: 1px;
+  left: 0;
+  top: 0;
+  background-color: rgba(51, 103, 153, 0.45);
+  border-top: 1px solid #336699;
+  border-bottom: 1px solid #336699;
+  z-index: 1;
+  display: block;
 }
