@@ -2,7 +2,8 @@ import {
   INITIALIZE_APP,
   ADD_TO_SCENE,
   MAKE_ELEMENT_ACTIVE,
-  CHANGE_PROPERTIES
+  CHANGE_PROPERTIES,
+  DROP_ELEMENT
 } from '../actions/types';
 
 const INITIAL_STATE = {
@@ -24,6 +25,21 @@ export default (state = INITIAL_STATE, action) => {
         ...state,
         objects: { ...state.objects, [action.payload.id]: { ...action.payload.object } }
       };
+
+    case DROP_ELEMENT: {
+      const objects = Object.keys(state.objects)
+        .filter(key => key !== action.payload)
+        .reduce((obj, key) => {
+          obj[key] = state.objects[key];
+          return obj;
+        }, {});
+
+      return {
+        ...state,
+        objects,
+        activeElement: null
+      };
+    }
 
     case MAKE_ELEMENT_ACTIVE: {
       const activeElement = state.objects[action.payload];
