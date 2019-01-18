@@ -48,8 +48,8 @@ class Draggable extends Component {
       },
 
       size: {
-        width: ref.clientWidth,
-        height: ref.clientHeight
+        w: ref.clientWidth,
+        h: ref.clientHeight
       }
     });
   };

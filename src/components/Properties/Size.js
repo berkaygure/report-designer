@@ -4,11 +4,13 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { convertToCm, convertToPx } from '../../helpers/Dimensions';
 import { changeProperties } from '../../redux/actions';
-import Property from '../Property/Property';
-import PropertyHeader from '../Property/PropertyHeader';
-import PropertyBody from '../Property/PropertyBody';
-import PropertyTable from '../Property/PropertyTable';
-import PropertyTableRow from '../Property/PropertyTableRow';
+import {
+  Property,
+  PropertyHeader,
+  PropertyBody,
+  PropertyTable,
+  PropertyTableRow
+} from './Property';
 
 class Size extends Component {
   handleChange = event => {
