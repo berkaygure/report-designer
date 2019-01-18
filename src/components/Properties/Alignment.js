@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import { withNamespaces } from 'react-i18next';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { connect } from 'react-redux';
 import { changeProperties } from '../../redux/actions';
-import Property from '../Property/Property';
-import PropertyHeader from '../Property/PropertyHeader';
-import PropertyBody from '../Property/PropertyBody';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Property, PropertyHeader, PropertyBody } from './Property';
 
 class Alignment extends Component {
   changeAlignment = alignment => {
