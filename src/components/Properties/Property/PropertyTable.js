@@ -1,9 +1,14 @@
-import React from 'react';
+// @flow
+import * as React from 'react';
 
-export default function PropertyTable(props) {
+type Props = {
+  children: React.Node
+};
+
+export default function PropertyTable({ children }: Props) {
   return (
     <table className="w-full table-auto table-fixed text-center text-sm">
-      <tbody>{props.children}</tbody>
+      <tbody>{children}</tbody>
     </table>
   );
 }

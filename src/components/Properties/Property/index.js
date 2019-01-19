@@ -1,3 +1,4 @@
+// @flow
 import Property from './Property';
 import PropertyBody from './PropertyBody';
 import PropertyHeader from './PropertyHeader';

@@ -1,9 +1,6 @@
-export const PER_PIXEL = 32;
+// @flow
+export const PER_PIXEL: number = 32;
 
-export const convertToCm = px => {
-  return (px / PER_PIXEL).toFixed(2);
-};
+export const convertToCm = (px: number): string => (px / PER_PIXEL).toFixed(2);
 
-export const convertToPx = cm => {
-  return cm * PER_PIXEL;
-};
+export const convertToPx = (cm: number): number => cm * PER_PIXEL;
