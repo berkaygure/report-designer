@@ -1,30 +1,37 @@
-import React from 'react';
+// @flow
+import * as React from 'react';
 import _ from 'lodash';
-import PropTypes from 'prop-types';
-import ToolGroup from './ToolGroup/ToolGroup';
+import Panel from './Toolbox/Panel';
 
-export default function Toolbox(props) {
-  const { tools } = props;
-  return (
-    <div className="bg-grey-lightest p-3 shadow w-1/4">
-      {tools &&
-        tools.map(tool => (
-          <ToolGroup
-            key={_.identity('tool')}
-            title={tool.title}
-            collapse
-            tools={tool.items}
-            description={tool.description}
-          />
-        ))}
-    </div>
-  );
-}
-
-Toolbox.propTypes = {
-  tools: PropTypes.arrayOf(PropTypes.object)
-};
-
-Toolbox.defaultProps = {
+type Props = {
   tools: []
 };
+
+type ToolboxWrapperTypes = {
+  children?: React.Node
+};
+
+const ToolboxWrapper = ({ children }: ToolboxWrapperTypes) => (
+  <div className="bg-grey-lightest p-3 shadow w-1/4">{children}</div>
+);
+
+ToolboxWrapper.defaultProps = {
+  children: null
+};
+
+export default function Toolbox({ tools }: Props) {
+  if (!tools) return <ToolboxWrapper />;
+  return (
+    <ToolboxWrapper>
+      {tools.map(tool => (
+        <Panel
+          key={_.identity('tool')}
+          title={tool.title}
+          collapse
+          tools={tool.items}
+          description={tool.description}
+        />
+      ))}
+    </ToolboxWrapper>
+  );
+}

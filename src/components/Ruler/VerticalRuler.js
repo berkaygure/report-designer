@@ -1,12 +1,20 @@
+// @flow
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { PER_PIXEL } from '../../helpers/Dimensions';
+
 import './Ruler.css';
 
-class VerticalRuler extends Component {
+type Props = {
+  height: number,
+  followerY: ?number,
+  followerH: ?number
+};
+
+class VerticalRuler extends Component<Props> {
   renderTicks() {
     const VRulerTicks = [];
-    for (let i = 0; i < Math.ceil(this.props.height / PER_PIXEL); i++) {
+    const { height } = this.props;
+    for (let i = 0; i < Math.ceil(height / PER_PIXEL); i += 1) {
       VRulerTicks.push(
         <div key={i} className="tick" style={{ height: PER_PIXEL, top: PER_PIXEL * i }}>
           <div className="rulerVNumber">{i}</div>
@@ -18,15 +26,16 @@ class VerticalRuler extends Component {
   }
 
   render() {
+    const { followerY, followerH } = this.props;
     return (
       <div className="ruler ruler-v">
         {this.renderTicks()}
-        {this.props.followerY !== null && this.props.followerH !== null ? (
+        {followerY !== null && followerH !== null ? (
           <div
             className="ruler-follower-v"
             style={{
-              top: this.props.followerY,
-              height: this.props.followerH
+              top: followerY,
+              height: followerH
             }}
           />
         ) : null}
@@ -34,11 +43,5 @@ class VerticalRuler extends Component {
     );
   }
 }
-
-VerticalRuler.propTypes = {
-  height: PropTypes.number,
-  followerY: PropTypes.number,
-  followerH: PropTypes.number
-};
 
 export default VerticalRuler;

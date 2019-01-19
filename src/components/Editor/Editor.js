@@ -1,3 +1,4 @@
+// @flow
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
@@ -9,26 +10,27 @@ import { Default } from '../Elements';
 import './Editor.css';
 import { addToScene, makeElementActive } from '../../redux/actions';
 
-class Editor extends Component {
-  static propTypes = {
-    showRuler: PropTypes.bool,
-    width: PropTypes.number,
-    height: PropTypes.number,
-    objects: PropTypes.instanceOf(Object),
-    addToScene: PropTypes.func.isRequired,
-    activeElement: PropTypes.instanceOf(Object).isRequired,
-    makeElementActive: PropTypes.func.isRequired
-  };
+type Props = {
+  showRuler?: string | boolean,
+  width: 950,
+  height: 672,
+  objects?: {},
+  addToScene: Function,
+  activeElement: {
+    properties: { location: { x: number, y: number }, size: { w: number, h: number } }
+  },
+  makeElementActive: Function
+};
 
+class Editor extends Component<Props> {
   static defaultProps = {
     showRuler: true,
-    width: 672,
-    height: 950,
     objects: {}
   };
 
   onDrop = e => {
     const tool = JSON.parse(e.dataTransfer.getData('tool'));
+    // eslint-disable-next-line no-shadow
     const { addToScene } = this.props;
 
     addToScene(_.uniqueId('element_'), {
@@ -45,6 +47,7 @@ class Editor extends Component {
   };
 
   onSelectEditor = e => {
+    // eslint-disable-next-line no-shadow
     const { makeElementActive } = this.props;
     // Maybe this is dirty solution by it works
     if (e.target.classList.contains('editor')) {
@@ -57,11 +60,12 @@ class Editor extends Component {
    */
   rulerX() {
     const { showRuler, activeElement, width } = this.props;
+    const isX = typeof showRuler === 'string' && showRuler.toLocaleLowerCase() === 'x';
 
-    return showRuler === true || showRuler.toString().toLocaleLowerCase() === 'x' ? (
+    return showRuler === true || isX ? (
       <HorizontalRuler
+        followerW={activeElement ? activeElement.properties.size.w : null}
         followerX={activeElement ? activeElement.properties.location.x : null}
-        followerW={activeElement ? activeElement.properties.size.width : null}
         width={width}
       />
     ) : null;
@@ -72,10 +76,11 @@ class Editor extends Component {
    */
   rulerY() {
     const { showRuler, activeElement, height } = this.props;
+    const isY = typeof showRuler === 'string' && showRuler.toLocaleLowerCase() === 'y';
 
-    return showRuler === true || showRuler.toString().toLocaleLowerCase() === 'y' ? (
+    return showRuler === true || isY ? (
       <VerticalRuler
-        followerH={activeElement ? activeElement.properties.size.height : null}
+        followerH={activeElement ? activeElement.properties.size.h : null}
         followerY={activeElement ? activeElement.properties.location.y : null}
         height={height}
       />

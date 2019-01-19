@@ -1,5 +1,6 @@
-import ToolGroup from './ToolGroup/ToolGroup';
+// @flow
+import Toolbox from './Toolbox';
 import Header from './Header';
 import PropertiesPanel from './Properties';
 
-export { ToolGroup, Header, PropertiesPanel };
+export { Toolbox, Header, PropertiesPanel };

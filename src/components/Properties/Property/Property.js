@@ -1,7 +1,10 @@
-import React from 'react';
+// @flow
+import * as React from 'react';
 
-export default function Property(props) {
-  return (
-    <div className="rounded-lg border border-grey-light bg-white mb-5 w-full">{props.children}</div>
-  );
+type Props = {
+  children: React.Node
+};
+
+export default function Property({ children }: Props) {
+  return <div className="rounded-lg border border-grey-light bg-white mb-5 w-full">{children}</div>;
 }

@@ -1,6 +1,6 @@
+// @flow
 import React, { Component } from 'react';
 import { withNamespaces } from 'react-i18next';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { convertToCm, convertToPx } from '../../helpers/Dimensions';
 import { changeProperties } from '../../redux/actions';
@@ -12,33 +12,43 @@ import {
   PropertyTableRow
 } from './Property';
 
-class Size extends Component {
-  handleChange = event => {
-    const width = event.target.name === 'w' ? convertToPx(event.target.value) : this.props.w;
-    const height = event.target.name === 'h' ? convertToPx(event.target.value) : this.props.h;
+type Props = {
+  changeProperties: (object: {}) => {},
+  t: (key: string) => string,
+  w: number,
+  h: number
+};
 
-    this.props.changeProperties({
+class Size extends Component<Props> {
+  handleChange = event => {
+    // eslint-disable-next-line no-shadow
+    const { changeProperties, w, h } = this.props;
+    const width = event.target.name === 'w' ? convertToPx(event.target.value) : w;
+    const height = event.target.name === 'h' ? convertToPx(event.target.value) : h;
+
+    changeProperties({
       size: {
-        width,
-        height
+        w: width,
+        h: height
       }
     });
   };
 
   render() {
+    const { t, w, h } = this.props;
     return (
       <Property>
-        <PropertyHeader title={this.props.t('size.title')} />
+        <PropertyHeader title={t('size.title')} />
         <PropertyBody>
           <PropertyTable>
             <PropertyTableRow
-              text={this.props.t('size.width')}
-              value={convertToCm(this.props.w)}
+              text={t('size.width')}
+              value={convertToCm(w)}
               change={this.handleChange}
             />
             <PropertyTableRow
-              text={this.props.t('size.width')}
-              value={convertToCm(this.props.w)}
+              text={t('size.width')}
+              value={convertToCm(h)}
               change={this.handleChange}
             />
           </PropertyTable>
@@ -48,18 +58,9 @@ class Size extends Component {
   }
 }
 
-Location.propTypes = {
-  w: PropTypes.number,
-  h: PropTypes.number
-};
-
-const mapStateToProps = state => {
-  return {};
-};
-
 export default withNamespaces()(
   connect(
-    mapStateToProps,
+    null,
     { changeProperties }
   )(Size)
 );

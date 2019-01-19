@@ -1,4 +1,5 @@
-import HorizontalRuler from './HorizontalRuler.js';
-import VerticalRuler from './VerticalRuler.js';
+// @flow
+import HorizontalRuler from './HorizontalRuler';
+import VerticalRuler from './VerticalRuler';
 
 export { VerticalRuler, HorizontalRuler };

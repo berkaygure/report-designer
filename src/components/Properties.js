@@ -2,13 +2,7 @@
 import * as React from 'react';
 
 type Props = {
-  properties: {},
-  activeElement: {
-    properties: {
-      size: { height?: number, width?: number },
-      location: { x?: number, y?: number }
-    }
-  }
+  properties: ?{}
 };
 
 const AvailableProperties = {
@@ -21,13 +15,15 @@ type PropertiesWrapperTypes = {
   children?: React.Node
 };
 
-const PropertiesWrapper = (props: PropertiesWrapperTypes) => {
-  const { children } = props;
-  return <div className="bg-grey-lightest shadow p-5 w-1/3">{children}</div>;
+const PropertiesWrapper = ({ children }: PropertiesWrapperTypes) => (
+  <div className="bg-grey-lightest shadow p-5 w-1/3">{children}</div>
+);
+
+PropertiesWrapper.defaultProps = {
+  children: null
 };
 
-const Properties = (props: Props) => {
-  const { properties } = props;
+const Properties = ({ properties }: Props) => {
   if (!properties) return <PropertiesWrapper />;
   return (
     <PropertiesWrapper>
