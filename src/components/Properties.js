@@ -6,8 +6,9 @@ type Props = {
 };
 
 const AvailableProperties = {
-  size: import('./Properties/Size.js'),
+  color: import('./Properties/Color.js'),
   alignment: import('./Properties/Alignment.js'),
+  size: import('./Properties/Size.js'),
   location: import('./Properties/Location.js')
 };
 
@@ -33,7 +34,7 @@ const Properties = ({ properties }: Props) => {
             return null;
           }
           const DynamicProperty = React.lazy(() => AvailableProperties[propertyName]);
-          return <DynamicProperty {...properties[propertyName]} />;
+          return <DynamicProperty key={propertyName} {...properties[propertyName]} />;
         })}
       </React.Suspense>
     </PropertiesWrapper>

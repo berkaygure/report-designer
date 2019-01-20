@@ -3,9 +3,13 @@ import React from 'react';
 import Draggable from '../Draggable/Draggable';
 
 type Props = {
-  context: {
+  context?: {
     properties: {
-      alignment?: string
+      alignment?: string,
+      color?: {
+        color: string | null,
+        backgroundColor: string | null
+      }
     },
     content: string
   },
@@ -13,7 +17,9 @@ type Props = {
 };
 
 const computedStyle = properties => ({
-  textAlign: properties ? properties.alignment : null
+  textAlign: properties ? properties.alignment : null,
+  color: properties && properties.color ? properties.color.color : null,
+  backgroundColor: properties && properties.color ? properties.color.backgroundColor : null
 });
 
 const Default = ({ id, context }: Props) => {
@@ -23,6 +29,18 @@ const Default = ({ id, context }: Props) => {
       {content}
     </Draggable>
   );
+};
+
+Default.defaultProps = {
+  context: {
+    properties: {
+      alignment: 'left',
+      color: {
+        color: '#000',
+        backgroundColor: '#fff'
+      }
+    }
+  }
 };
 
 export default Default;
