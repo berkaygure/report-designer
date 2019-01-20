@@ -11,6 +11,10 @@
           "once": true,
           "properties": {
             "alignment": "",
+            "color": {
+              "color": "#000",
+              "backgroundColor": "#fff"
+            },
             "location": {
               "x": 0,
               "y": 0

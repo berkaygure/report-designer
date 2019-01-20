@@ -2,5 +2,11 @@
   "emmet.includeLanguages": {
     "javascript": "javascriptreact",
     "vue-html": "html"
-  }
+  },
+  "cSpell.words": [
+    "colorpicker",
+    "property",
+    "row",
+    "table"
+  ]
 }

@@ -5,5 +5,8 @@
   "size.title": "Size",
   "size.width": "Width",
   "size.height": "Height",
-  "alignment.title": "Alignment"
+  "alignment.title": "Alignment",
+  "color.title": "Colors",
+  "color.text": "Text",
+  "color.background": "Back"
 }
